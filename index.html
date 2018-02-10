@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="//e.issuu.com/embed.js" async="true"></script>
+        <style>
+            #loading {
+                position: fixed;
+                left: 0;
+                top: 0;
+                z-index: 999; 
+                width: 100%; 
+                height: 100%; 
+                background:  white url('spinner.gif') no-repeat center center;
+            }
+        </style>
+        <script>
+            /*
+            window.onload = function(){
+                
+                $("#loading").fadeOut();
+                animate();
+            };
+            */
+            var firsTime = true;
+            (function(){
+                if(firsTime){
+                    window.onload = function(){
+                        $("#loading").fadeOut();
+                        animate();
+                    }
+                }
+            })();
+        </script>
+
+    </head>
+
+    <body>
+        <div id="loading">  </div>
+
+        <style>
+            @font-face{
+                font-family: 'YiBaiti';
+                src: url('msyi.ttf') 
+            }
+
+            html, body {
+                padding: 0;
+                margin: 0;
+            }
+
+            a{
+                color: black;
+            }
+
+            p {
+                font-size: 25px;
+                color: white;
+                -webkit-margin-before: 0px;
+                -webkit-margin-after: 0px;
+                font-weight: normal; 
+                line-height: 100%;
+                margin-right: 15%;
+                margin-left: 15%;
+                transition: height 0.5s;
+            }
+
+            h1 {
+                font-size: 40px;
+                color: #ff003A;
+                font-weight: normal;
+            }
+
+            h2 {
+                font-size: 40px;
+                color: black;
+                font-weight: normal;
+            }
+
+            h3 {
+                font-size: 30px;
+                color: grey;
+                background-color: black;
+                line-height: 100px;
+                font-weight: normal;
+            }
+
+            #DESIGENCE {
+                background-image: url('images/01_Par.gif');
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            #DISCIPLINARY_ENTROPY{
+                background-image: url('DISCIPLINARY_ENTROPY/cover.gif');
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            #MASTERY {
+                background-image: url('MASTERY/cover.gif');
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            #MESH_FARM{
+                background-image: url('MESH_FARM/cover.gif');
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            #OBLIQUE_FIGURATION{
+                background-image: url('OBLIQUE_FIGURATION/cover.gif');
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            #CONTINUOUS_FABRICATION{
+                background-image: url('CONTINUOUS_FAB/cover.gif');
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            #SUBTRACTION_FABRICATION{
+                background-image: url('SUBTRACTION_FAB/cover.gif');
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            #DYNAMIC_MATERIAL_CULTURE{
+                background-image: url('DYNAMIC_MATERIAL_CULTURE/cover.gif');
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+
+            .header {
+                margin: 0;
+            }
+
+            .infinite-carousel .list{
+                height:auto;
+                top: 0px;
+                bottom: 0px;
+                left: 0px;
+                right: -17px;
+                overflow-y: auto;
+                position: absolute;
+            }
+
+            .infinite-carousel .viewport{
+                width:100%;
+                height: 100%;
+                height:100vh;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .item{
+                font-family: 'YiBaiti', sans-serif;
+                font-size: 40px;
+                width:100%;
+                height:200px;
+                color: #ff003A;
+                text-align: center;
+                vertical-align: middle;
+                line-height: 130px;
+                float: left;
+                margin-top: 250px;
+                margin-bottom: 250px;
+                overflow: hidden;
+            }
+
+            .preview{
+                height: 600px;
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                line-height: 100px;
+                transition: line-height 0.5s, height 0.5s, overflow 0.5s;
+            }
+
+            .preview .project{
+                height:0px;
+                overflow:hidden;
+                transition: height 0.5s;
+            }
+
+            .preview .element{
+                height: 50%;
+                display: block;
+                transition: height 0.5s ;   
+            }
+
+            .preview p {
+                height: 100%;
+                overflow: hidden;
+                margin:5% 15%;
+                transition: height 0.5s, margin 0.5s;
+            }
+
+            .project p {
+                margin:5% 15%;
+            }
+
+            .open{
+                height: 105%;
+                background-color: #242424;
+                display:block;
+                overflow:hidden;
+                transition: height 0.5s;
+            }
+
+            .open .project{
+                height: 100%;
+                width: 102%;
+                background:#706f6f;
+                transition: height 0.5s;
+                overflow: auto;
+            }
+
+            .open .element{
+                height:0%;
+                overflow:hidden;
+                transition: height 0.5s;
+            }
+
+            .cell{
+                
+                float: left;
+
+            }
+
+            .item preview.project{
+                height: 0px !important;
+                overflow:hidden;
+                display:block;
+            }
+
+            .issuuembed {
+                width:100%; 
+                height:583px;
+            }
+
+            .block div{
+                height: 0px;
+            }
+
+            .block .project{
+                height: 0px;
+                overflow: hidden;
+                transition: height 0.5s;
+            }
+
+            .block{
+                /* background-image: url('images/01_Par.gif'); */
+                height: 200px;
+
+                transition: line-height 0.5s, height 0.5s;
+            }
+
+            .block p {
+                height: 0%;
+                overflow: hidden;
+                transition: height 0.5s, margin 0.5s;
+                margin: 0%;
+            }
+
+            .project h1{
+                margin: 5%;
+            }
+
+            .g{
+                background-image: url('images/02_Par.gif');
+                height: 200px;
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                transition: line-height 0.5s, height 0.5s;
+            }
+            .b{
+                background-image: url('images/03_Par.gif');
+                height: 200px;
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                transition: line-height 0.5s, height 0.5s;
+            }
+
+            .return {
+                background:black;
+                margin: 45px auto;
+            }
+
+            img{
+                max-width:100%;
+                max-height: 100%;
+            }
+
+            #myVideo {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                min-width: 100%;
+                min-height: 100%;
+                transform: translate(-50%, -50%);
+                max-height: 110%;
+            }
+
+            @media screen and (min-width: 1100px){
+                /* LARGE SCREEN */
+                .project img{
+                    max-width: 90%;
+                    max-height: 100%;
+                }
+
+                .issuuembed {
+                    height: 650px;
+                }
+            }
+
+            @media screen and (min-width: 1601px) {
+                /* VERY LARGE SCREEN */
+                .project img {
+                    max-width: 75%;
+                    max-height: 90%;
+                }
+
+                .issuuembed {
+                    height: 800px;
+                }
+            }
+    
+        </style>
+                
+        <div class='infinite-carousel'>
+            
+            <div class="videoContainer">
+            <video autoplay muted loop id="myVideo">
+                <source src="extrusion.mp4" type="video/mp4">
+            </video>
+            </div>
+
+            <!-- b and g classes are placeholders and shuld be removed later -->
+            <div class="viewport"> 
+                <div class='list'>
+                    <div class='item block' id='MASTERY'>
+                        <div class='element'>                 
+                                <p>The profession is a journey with shifting destination. 
+                                    While working we project our professional agency 
+                                    changing the world at the power of our mastery. 
+                                    We cut and stitch, soil and dry, spoil and fix, 
+                                    hide and disclose, speak and listen, draw and erase, 
+                                    hold and release to shape material world in a form of 
+                                    an object or event. I work on a form and a medium, 
+                                    and look inward and outward to see if a form has a sense 
+                                    to it's environment and which response it will receive. </p>
+                        </div>
+                        <div class='project' style="background:#242424">
+                            <h2>MASTER</h2>
+                            <img src="MASTERY/master.jpg" alt="Master">
+                            <p style="text-align: justify">
+                                There is no title which can encapsulate the complexity of professional 
+                                agency in a social culture and economic exchange. Whichever title 
+                                profession bare, it is constantly drifting further away from what 
+                                it meant previously in the ocean of social exchange. The social 
+                                exchange is seeking for new activities which wouldn't be satisfied 
+                                with known occupations. Hence there are esoteric job titles such as 
+                                evangelist and Jedi. That is a reflection of dynamic structure of 
+                                social exchange.  
+                                <br><br>
+                                My occupation is not an exception. It is drifting between a cultural 
+                                agency and technological opportunity. It is floating between Art, 
+                                Technology, and Economy. Its primary subject is physical matter, 
+                                and it's the main object is social meaning.  
+                                <br><br>    
+                                A real master of such profession understands that the form is 
+                                determined by it's medium. Systems Engineering gives a useful 
+                                understanding of the relationship between a form and a medium. 
+                                To look deeper into the problem one needs to look further away. 
+                                To understand the details and make sense of their meaning one need 
+                                to understand the outward structure, which the given problem is a 
+                                part of. Understanding the limitations of the medium is a great 
+                                liberation from the anxiety of formal research. Whether the form 
+                                is a project execution plan, a software code or a sculpture. 
+                                Each of the forms requires understanding of a medium and therefore 
+                                limitations and possibilities. Such  fundamental understanding of 
+                                interdependency between a form and a medium helps to unfetter 
+                                creativity in a systematic way, switching the vector of a question 
+                                inward or outward. While looking inward one would master a 
+                                formal technique. And outward focus would give a fundamental 
+                                understanding and conceptual research and a mind shift. </p>
+                            <div class='return'> <h3> RETURN </h3> </div>
+                        </div>
+                        <div class="element">
+                            <h1>MASTER</h1>
+                        </div>
+                    </div>
+
+
+                    <div class='item block' id='DESIGENCE'>    
+                        <div class='element'>                 
+                            <p>Design is a bastard child of evolution. Hence Intelligent Design
+                                is a divine way of giving an evolution a purpose or make sense 
+                                of generative iteration. Every generation is a pinup, every new 
+                                offspring is a new iteration. Design process is locked in an 
+                                eternal circle of variation, selection, heredity. Through the 
+                                similarity between the two, it is clear that Designing is synonymous 
+                                with Evolving. With the only difference that design favors certain 
+                                qualities of the process, selfishly selected by the agency of 
+                                an author, or a director, or a master.   </p>
+                        </div>
+                        <div class='project'> 
+                            
+                            <h2>DESIGENT</h2>
+                            <p> In the process of creating variation, evaluating the variants 
+                                        of forms and extracting prominent features designer advancing 
+                                        the authority over the cycle. Each cycle of creating, evaluating, 
+                                        extracting performed via given medium. Thus each stage of the 
+                                        cycle can be performed in a variety of mediums.    </p>
+
+                                    <div data-configid="2200478/57908752" class="issuuembed"></div>
+                                
+                                    <p> Through selection of medium for each stage and working with it 
+                                        and author exhibit its agency. Unlike evolutionary process, where 
+                                        the destination is unknown, designer project it's authority on the 
+                                        cyclical process and discriminates against iterations in favor of 
+                                        their design PURSUIT. Such PURSUIT constitutes Design Agency. 
+                                        Designer create objects and events that make sense to him in the 
+                                        effort of radiating cultural meaning. Equally Designer reads a 
+                                        cultural phenomenon discriminating in favor of their agency. 
+                                        Such commitment to a topic of PURSUIT makes DESIGENT a medium. 
+                                        Which sees the meaning in a particular topic and generate a 
+                                        variety of objects and events for the society to select and test 
+                                        against reality of social needs. </p>
+                                     <div class='return'> <h3> RETURN </h3> </div>
+                        </div>
+                        <div class="element">
+                            <h1>DESIGENT</h1>
+                        </div>
+                    </div>
+
+
+                    <div class='item block' id='DISCIPLINARY_ENTROPY'>
+                        <div class="element">
+                            <p>paragraph</p>
+                        </div>
+                        <div class="project">
+                            <h2>DESCIPLINARY ENTROPY</h2>
+                            <div data-configid="2200478/57911431" class="issuuembed"></div>
+                            <p>paragraph</p>
+                            <div class='return'> <h3> RETURN </h3> </div> 
+                        </div>
+                        <div class="element">
+                            <h1>DISCIPLINARY ENTROPY</h1>
+                        </div>
+                        
+                    </div>
+
+
+                    <div class='item block'id='OBLIQUE_FIGURATION'>
+                        <div class="element">
+                            <p>paragraph</p>
+                        </div>
+                        <div class="project">
+                            <h2>OBLIQUE FIGURATION</h2>
+                                <div data-configid="2200478/57911660" style="width:100%; height:572px;" class="issuuembed"></div>
+                                <p>paragraph</p>
+                                <div class='return'> <h3> RETURN </h3> </div>
+                        </div>
+                        <div class="element">
+                            <h1>OBLIQUE FIGURATION</h1>    
+                        </div>
+                    </div>
+
+
+                    <div class='item block' id='CONTINUOUS_FABRICATION'>
+                        <div class="element">
+                            <p>continuous paragraph</p>
+                        </div>
+                        <div class="project">
+                            <h2>CONTINUOUS</h2>
+                            <p>paragraph</p>
+                            <img src="CONTINUOUS_FAB/precedent.jpg" alt="Precedents">
+                            <p>paragraph</p>
+                            <img src="CONTINUOUS_FAB/initial.jpg" alt="Tool Path Diagrams">
+                            <p>Paragraph</p>
+                            <img src="CONTINUOUS_FAB/diagrams.png" alt="Initial Stage">
+                            <p>Paragraph</p>
+                            <iframe src="https://player.vimeo.com/video/254058903?autoplay=1&loop=1&color=7606f6f&title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                            <p>paragraph</p>
+                            <img src="CONTINUOUS_FAB/process.png" alt="Iterative Design and Medium Development">
+                            <p>Paragraph</p>
+                            <img src="CONTINUOUS_FAB/scan.png" alt="3D Image Scan">
+                            <p>Paragraph</p>
+                            <iframe src="https://player.vimeo.com/video/254112622?autoplay=0&loop=1&color=7606f6f&title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                            <p>Paragraph</p>
+
+                            
+                            <p>Continuous Project in colaboration with: <a href="http://daisen01.com/" target="_blank">Sen Dai</a> <a href="https://www.linkedin.com/in/thomas-legleu-77867a6b/" target="_blank">Thomas Legleu</a> <a href="https://pingtingwei.com/" target="_blank">Pingting Wei</a> </p>
+                            <div class='return'> <h3> RETURN </h3> </div>
+                        </div>
+                        <div class="element">
+                            <h1>CONTINUOUS</h1>
+                        </div>
+                    </div>
+
+
+                    <div class='item block' id='SUBTRACTION_FABRICATION'>
+                        <h1>SUBSTRACTION FABRICATION</h1>
+                    </div>
+
+
+                    <div class='item block' id='DYNAMIC_MATERIAL_CULTURE'>
+                        <h1>DYNAMIC MATERIAL CULTURE</h1>
+                    </div>
+
+
+                    <div class='item block' id='MESH_FARM'>
+                        <h1>MESH FARM</h1>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <!-- <button class='next'>next</button> -->
+        </div>
+
+        <script> 
+            var trigger = false;
+            (function () {
+
+                // logic here
+                var item;
+                var position;
+                var stopScroll = false;
+                var listTop;
+            
+
+                $('.return').on('click', function(event){
+                     console.log("RETURN!!!!");
+                     
+                     $('.open').removeClass('open');
+                     stopScroll = false;
+                     
+                });
+
+                $(".item").on('click', function(event){
+                        var openToggle;
+                        //console.log("class:" + $(this).attr('class'))
+                        if($(this).attr('class') == 'item preview'){
+                                    console.log("He hit the preview LINE 227");
+                                    $(this).removeClass('preview');
+                                    $(this).removeClass('block');
+                                    $(this).addClass('open');
+                                    //here the div got opened
+                                    stopScroll = true;
+                                    
+                                    position = $(this).offset();
+                                    listScroll = $(".list").scrollTop();
+                                    console.log("Top positoin of the element" + position.top);
+
+                                    listTop = $(".list").scrollTop()+position.top;
+                                    
+                                    //BUG LEFTOFF!!!
+                                    //when the pixel is too close to 4199, additional 
+                                    //animation sets it way over the limit and it keeps spinning.
+                                    
+                                    //$('.list').animate({
+                                    //   scrollTop: $(".list").scrollTop()+position.top
+                                    //},500);
+
+
+                                    //console.log(openToggle);
+                        } else if ($(this).attr('class') == 'item open') {
+                                    openToggle = true;
+                        } else {
+                                    openToggle = false;
+                        }
+
+
+                        event.stopPropagation();
+
+                        if(typeof item != 'undefined'){
+                            item.removeClass('preview');
+                            if(openToggle == false){
+                                item.addClass('block');
+                                item.removeClass('open');
+                                // here the div got closed
+                                stopScroll = false;
+
+                            }
+                            //item.addClass('block');
+                            item = $(this);
+                            
+                        }else{
+                            item = $(this);
+                        }
+                        
+                        
+                        var text = $(this).attr('class');
+                        //console.log(text); 
+                        //console.log(openToggle);
+                        if(openToggle == true){
+                                   //console.log("DO Nothing!"); //inaction
+                        }else if (openToggle == false){
+                            console.log("removing BLOCK inserting PREVIEW");
+                            $(this).removeClass('block');
+                            $(this).addClass('preview');
+                        }
+                
+                });
+
+
+
+                    //THIS IS CAROUSEL PART
+
+                var isScrolling;
+
+                $(".list").on( 'scroll', function(event){
+                    var list = $(".list").scrollTop();
+                    console.log("Pixels :" + list);
+
+                    clearTimeout(isScrolling);
+
+                    isScrolling = setTimeout(function(){
+                        console.log("Done Scrolling on the Pixel _" + list);
+                        //the entire functionality goes here.
+
+                        if(list > 4199){
+                            console.log("Create Below");
+                            var carousel = $(".list"); //var list = $(".list");
+                            carousel.children(":last").after(carousel.children(":first"));
+                            list = (list-4199)+3500;
+                            $(".list").scrollTop(list);//(3500);
+                            
+                            
+                        }
+
+                        if(list < 2801){
+                            console.log("Create Above");
+                            var carousel = $(".list"); //var list = $(".list");
+                            carousel.prepend(carousel.children(":last"));
+                            list = 3500-(2801-list);
+                            $(".list").scrollTop(list);//(3500);
+                            
+                        }
+
+                    }, 66);
+
+
+                    if(stopScroll){ //this is project div lock
+                        //stop scroll 
+                        $(".list").scrollTop(listTop);            
+                    } else {
+                        //allow scroll            
+                    }
+                            //
+                    if(trigger){
+
+
+                    }//
+
+                });
+
+                 $(window).click(function(){
+                      //console.log("That's Window Click!" + item);
+                      if(typeof item != 'undefined'){
+                        //item.css("height", "200px");
+                        item.removeClass('open preview'); 
+                        item.addClass('block');           
+                      }
+                               
+                   });
+                
+            })();
+
+            function animate(){
+                //console.log("We are Here");
+                $(".list").animate({
+                    scrollTop: '3500px'
+                },3000, function(){
+                            console.log("The end of the function");
+                            trigger = true;
+                            firsTime = false;
+                });
+            };
+
+            /*
+            $(document).ready(function(){
+                //console.log("We are Here");
+                $(".list").animate({
+                    scrollTop: '3500px'
+                },3000, function(){
+                            console.log("The end of the function");
+                            trigger = true;
+                });
+            });
+            */
+
+        </script>
+    </body>
+</html>
