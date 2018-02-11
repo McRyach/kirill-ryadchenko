@@ -570,7 +570,7 @@
                         var openToggle;
                         //console.log("class:" + $(this).attr('class'))
                         if($(this).attr('class') == 'item preview'){
-                                    console.log("He hit the preview LINE 227");
+                                    //console.log("He hit the preview LINE 227");
                                     $(this).removeClass('preview');
                                     $(this).removeClass('block');
                                     $(this).addClass('open');
@@ -580,16 +580,17 @@
                                     position = $(this).offset();
                                     listScroll = $(".list").scrollTop();
                                     console.log("Top positoin of the element" + position.top);
+                                    console.log("Pixel of the page: " + listScroll);
 
                                     listTop = $(".list").scrollTop()+position.top;
                                     
                                     //BUG LEFTOFF!!!
                                     //when the pixel is too close to 4199, additional 
                                     //animation sets it way over the limit and it keeps spinning.
-                                    
-                                    //$('.list').animate({
-                                    //   scrollTop: $(".list").scrollTop()+position.top
-                                    //},500);
+                                    trigger = false;
+                                    $('.list').animate({
+                                       scrollTop: 3750 //$(".list").scrollTop()+position.top
+                                    },500);
 
 
                                     //console.log(openToggle);
@@ -609,6 +610,7 @@
                                 item.removeClass('open');
                                 // here the div got closed
                                 stopScroll = false;
+                                trigger = true;
 
                             }
                             //item.addClass('block');
@@ -619,9 +621,8 @@
                         }
                         
                         
-                        var text = $(this).attr('class');
-                        //console.log(text); 
-                        //console.log(openToggle);
+                        //var text = $(this).attr('class');
+
                         if(openToggle == true){
                                    //console.log("DO Nothing!"); //inaction
                         }else if (openToggle == false){
@@ -647,27 +648,29 @@
                     isScrolling = setTimeout(function(){
                         console.log("Done Scrolling on the Pixel _" + list);
                         //the entire functionality goes here.
+                        if(trigger){
+                            if(list > 4199){
+                                console.log("Create Below");
+                                var carousel = $(".list"); //var list = $(".list");
+                                carousel.children(":last").after(carousel.children(":first"));
+                                list = (list-4199)+3500;
+                                $(".list").scrollTop(list);//(3500);
+                                
+                                
+                            }
 
-                        if(list > 4199){
-                            console.log("Create Below");
-                            var carousel = $(".list"); //var list = $(".list");
-                            carousel.children(":last").after(carousel.children(":first"));
-                            list = (list-4199)+3500;
-                            $(".list").scrollTop(list);//(3500);
-                            
-                            
-                        }
-
-                        if(list < 2801){
-                            console.log("Create Above");
-                            var carousel = $(".list"); //var list = $(".list");
-                            carousel.prepend(carousel.children(":last"));
-                            list = 3500-(2801-list);
-                            $(".list").scrollTop(list);//(3500);
-                            
+                            if(list < 2801){
+                                console.log("Create Above");
+                                var carousel = $(".list"); //var list = $(".list");
+                                carousel.prepend(carousel.children(":last"));
+                                list = 3500-(2801-list);
+                                $(".list").scrollTop(list);//(3500);
+                                
+                            }
                         }
 
                     }, 66);
+
 
 
                     if(stopScroll){ //this is project div lock
@@ -677,10 +680,7 @@
                         //allow scroll            
                     }
                             //
-                    if(trigger){
 
-
-                    }//
 
                 });
 
@@ -706,18 +706,6 @@
                             firsTime = false;
                 });
             };
-
-            /*
-            $(document).ready(function(){
-                //console.log("We are Here");
-                $(".list").animate({
-                    scrollTop: '3500px'
-                },3000, function(){
-                            console.log("The end of the function");
-                            trigger = true;
-                });
-            });
-            */
 
         </script>
     </body>
