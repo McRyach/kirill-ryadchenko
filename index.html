@@ -28,7 +28,7 @@
                 if(firsTime){
                     window.onload = function(){
                         $("#loading").fadeOut();
-                        animate();
+                        window.requestAnimationFrame(animate);
                     }
                 }
             })();
@@ -413,7 +413,7 @@
                             <div class='return'> <h3> RETURN </h3> </div>
                         </div>
                         <div class="element">
-                            <h1>THIS IS GIT TEST</h1>
+                            <h1>MASTER</h1>
                         </div>
                     </div>
 
@@ -712,6 +712,7 @@
                             console.log("Trigger state: " +trigger);
                             firsTime = false;
                 });
+                
             };
 
         </script>
