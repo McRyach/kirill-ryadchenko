@@ -641,9 +641,9 @@
 
                 var listDOM = document.getElementsByClassName('list');
 
-                listDOM.addEventListener('scroll', scrollingEvent, {passive: ture});
+                listDOM.addEventListener('scroll', scrollingEvent);
 
-                function scrollingEvent(){
+                function scrollingEvent() {
                     var pix = listDOM.scrollTop();
                     console.log("List Pixels =" + pix);
                 }
