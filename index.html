@@ -87,7 +87,7 @@
             }
 
             #DESIGENCE {
-                background-image: url('images/01_Par.gif');
+                background-image: url('DESIGENCE/cover.jpg');
                 background-attachment: fixed;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -95,7 +95,7 @@
             }
 
             #DISCIPLINARY_ENTROPY{
-                background-image: url('DISCIPLINARY_ENTROPY/cover.gif');
+                background-image: url('DISCIPLINARY_ENTROPY/cover.jpg');
                 background-attachment: fixed;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -103,7 +103,7 @@
             }
 
             #MASTERY {
-                background-image: url('MASTERY/cover.gif');
+                background-image: url('MASTERY/cover.jpg');
                 background-attachment: fixed;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -111,7 +111,7 @@
             }
 
             #MESH_FARM{
-                background-image: url('MESH_FARM/cover.gif');
+                background-image: url('MESH_FARM/cover.jpg');
                 background-attachment: fixed;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -119,7 +119,7 @@
             }
 
             #OBLIQUE_FIGURATION{
-                background-image: url('OBLIQUE_FIGURATION/cover.gif');
+                background-image: url('OBLIQUE_FIGURATION/cover.jpg');
                 background-attachment: fixed;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -127,7 +127,7 @@
             }
 
             #CONTINUOUS_FABRICATION{
-                background-image: url('CONTINUOUS_FAB/cover.gif');
+                background-image: url('CONTINUOUS_FAB/cover.jpg');
                 background-attachment: fixed;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -135,7 +135,7 @@
             }
 
             #SUBTRACTION_FABRICATION{
-                background-image: url('SUBTRACTION_FAB/cover.gif');
+                background-image: url('SUBTRACTION_FAB/cover.jpg');
                 background-attachment: fixed;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -143,7 +143,7 @@
             }
 
             #DYNAMIC_MATERIAL_CULTURE{
-                background-image: url('DYNAMIC_MATERIAL_CULTURE/cover.gif');
+                background-image: url('DYNAMIC_MATERIAL_CULTURE/cover.jpg');
                 background-attachment: fixed;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -325,6 +325,7 @@
                 min-height: 100%;
                 transform: translate(-50%, -50%);
                 max-height: 110%;
+                display: none;
             }
 
             @media screen and (min-width: 1100px){
@@ -332,6 +333,10 @@
                 .project img{
                     max-width: 90%;
                     max-height: 100%;
+                }
+
+                #myVideo{
+                    display: block;
                 }
 
                 .issuuembed {
@@ -344,6 +349,10 @@
                 .project img {
                     max-width: 75%;
                     max-height: 90%;
+                }
+
+                #myVideo{
+                    display: block;
                 }
 
                 .issuuembed {
@@ -559,7 +568,7 @@
             
 
                 $('.return').on('click', function(event){
-                     console.log("RETURN!!!!");
+                     //console.log("RETURN!!!!");
                      
                      $('.open').removeClass('open');
                      stopScroll = false;
@@ -579,8 +588,8 @@
                                     
                                     position = $(this).offset();
                                     listScroll = $(".list").scrollTop();
-                                    console.log("Top positoin of the element" + position.top);
-                                    console.log("Pixel of the page: " + listScroll);
+                                    //console.log("Top positoin of the element" + position.top);
+                                    //console.log("Pixel of the page: " + listScroll);
 
                                     listTop = $(".list").scrollTop()+position.top;
                                     
@@ -626,7 +635,7 @@
                         if(openToggle == true){
                                    //console.log("DO Nothing!"); //inaction
                         }else if (openToggle == false){
-                            console.log("removing BLOCK inserting PREVIEW");
+                            //console.log("removing BLOCK inserting PREVIEW");
                             $(this).removeClass('block');
                             $(this).addClass('preview');
                         }
@@ -640,7 +649,7 @@
                 var isScrolling;
 
                 var listDOM = document.getElementsByClassName('list');
-                console.log(listDOM[0]);
+                //console.log(listDOM[0]);
 
                 listDOM[0].addEventListener("scroll", scrollingEvent, {passive: true});
 
@@ -655,16 +664,16 @@
 
                     if(trigger){
                             var list = $(".list").scrollTop();
-                            console.log("Pixels :" + list);
+                            //console.log("Pixels :" + list);
 
                             clearTimeout(isScrolling);
 
                             isScrolling = setTimeout(function(){
-                                console.log("Done Scrolling on the Pixel _" + list);
+                                //console.log("Done Scrolling on the Pixel _" + list);
                                 //the entire functionality goes here.
                                 
                                     if(list > 4199){
-                                        console.log("Create Below");
+                                        //console.log("Create Below");
                                         var carousel = $(".list"); //var list = $(".list");
                                         carousel.children(":last").after(carousel.children(":first"));
                                         list = (list-4199)+3500;
@@ -674,7 +683,7 @@
                                     }
 
                                     if(list < 2801){
-                                        console.log("Create Above");
+                                        //console.log("Create Above");
                                         var carousel = $(".list"); //var list = $(".list");
                                         carousel.prepend(carousel.children(":last"));
                                         list = 3500-(2801-list);
@@ -757,9 +766,9 @@
                 $(".list").animate({
                     scrollTop: '3500px'
                 },3000, function(){
-                            console.log("The end of the function");
+                            //console.log("The end of the function");
                             trigger = true;
-                            console.log("Trigger state: " +trigger);
+                            //console.log("Trigger state: " +trigger);
                             firsTime = false;
                 });
                 
