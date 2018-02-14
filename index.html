@@ -639,8 +639,8 @@
 
                 var isScrolling;
 
-                //$(".list").on( 'scroll', function(event){
-                $(".list").addEventListener( 'scroll', function(event){
+                $(".list").on( 'scroll', function(event){
+                
                 
                 window.requestAnimationFrame(wheeling);
 
@@ -688,8 +688,6 @@
                         }
                     };
 
-                }, {
-                    passive: true
                 });
 
 
