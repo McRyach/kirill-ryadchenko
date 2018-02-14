@@ -639,7 +639,16 @@
 
                 var isScrolling;
 
-                $(".list").on( 'scroll', function(event){
+                var listDOM = document.getElementsByClassName('list');
+
+                listDOM.addEventListener('scroll', scrollingEvent, {passive: ture});
+
+                function scrollingEvent(){
+                    var pix = listDOM.scrollTop();
+                    console.log("List Pixels =" + pix);
+                }
+
+                //$(".list").on( 'scroll', function(event){
                 
                 
                 window.requestAnimationFrame(wheeling);
