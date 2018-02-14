@@ -640,13 +640,51 @@
                 var isScrolling;
 
                 var listDOM = document.getElementsByClassName('list');
-                console.log(listDOM);
+                console.log(listDOM[0]);
 
-                document.addEventListener("scroll", scrollingEvent);
+                listDOM[0].addEventListener("scroll", scrollingEvent, {passive: true});
 
                 function scrollingEvent() {
-                    var pix = listDOM.scrollTop();
-                    console.log("List Pixels =" + pix);
+                    var pix = listDOM[0].scrollTop;
+                    //console.log("List Pixels =" + pix);
+                    if(stopScroll){ //this is project div lock
+                        //stop scroll 
+                        $(".list").scrollTop(listTop);    
+ 
+                    }
+
+                    if(trigger){
+                            var list = $(".list").scrollTop();
+                            console.log("Pixels :" + list);
+
+                            clearTimeout(isScrolling);
+
+                            isScrolling = setTimeout(function(){
+                                console.log("Done Scrolling on the Pixel _" + list);
+                                //the entire functionality goes here.
+                                
+                                    if(list > 4199){
+                                        console.log("Create Below");
+                                        var carousel = $(".list"); //var list = $(".list");
+                                        carousel.children(":last").after(carousel.children(":first"));
+                                        list = (list-4199)+3500;
+                                        $(".list").scrollTop(list);//(3500);
+                                        
+                                        
+                                    }
+
+                                    if(list < 2801){
+                                        console.log("Create Above");
+                                        var carousel = $(".list"); //var list = $(".list");
+                                        carousel.prepend(carousel.children(":last"));
+                                        list = 3500-(2801-list);
+                                        $(".list").scrollTop(list);//(3500);
+                                        
+                                    }
+                                
+
+                            }, 66);
+                    }
                 }
                 
                 /*
