@@ -356,7 +356,7 @@ html, body {
 }
 
 .block{
-    background-image: url('01_Par.jpg');
+    /* background-image: url('01_Par.jpg'); */
     height: 200px;
     transition: line-height 0.5s, height 0.5s;
 }
@@ -374,13 +374,73 @@ html, body {
     margin-top: 250px;
     margin-bottom: 250px;
     overflow: hidden;
-    background-attachment: fixed;
+    /*background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     position: static;
 }
 
 #MASTER{
     background-image: url('01_Par.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#DESIGENCE{
+    background-image: url('01_Par.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#DISCIPLINARY_ENTROPY{
+    background-image: url('01_Par.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#OBLIQUE_FIGURATION{
+    background-image: url('01_Par.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#REFLAXING{
+    background-image: url('01_Par.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#VOIDING{
+    background-image: url('01_Par.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#DYNAMIC_MATERIAL_CULTURE{
+    background-image: url('01_Par.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#MESH_FARM{
+    background-image: url('01_Par.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
