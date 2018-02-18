@@ -31,8 +31,8 @@
    */
   
   h1 {
-    font-size: 4em;
-    margin: 0.67em 0;
+    font-size: 5em;
+    margin: 0.47em 0;
     font-weight: normal;
   }
   
@@ -378,6 +378,7 @@ html, body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: static;
 }
 
 #MASTER{
