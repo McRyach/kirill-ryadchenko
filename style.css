@@ -367,7 +367,7 @@ html, body {
 
 .viewport{
     height: 100vh;
-    overflow: auto;
+    overflow-y: scroll;
     width:100%;
     position: relative;
 
@@ -432,5 +432,10 @@ html, body {
   .item{
     color: aqua;
     background-attachment: local;
+  }
+
+  .viewport{
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
   }
 }
