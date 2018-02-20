@@ -364,9 +364,6 @@ html, body {
     transition: line-height 0.5s, height 0.5s;
 }
 
-.list{
-    
-}
 
 .viewport{
     height: 100vh;
@@ -429,4 +426,11 @@ html, body {
 
 #MESH_FARM{
     background-image: url('01_Par.jpg');
+}
+
+@media screen and (max-width: 600px){ /* iPhone and smaller */
+  .item{
+    color: aqua;
+    background-attachment: local;
+  }
 }
