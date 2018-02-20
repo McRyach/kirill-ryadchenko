@@ -364,6 +364,17 @@ html, body {
     transition: line-height 0.5s, height 0.5s;
 }
 
+.list{
+    
+}
+
+.viewport{
+    height: 100vh;
+    overflow: auto;
+    width:100%;
+    position: relative;
+
+}
 
 
 .item{
@@ -385,6 +396,7 @@ html, body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    -webkit-background-size: cover;
 }
 
 #MASTER{
