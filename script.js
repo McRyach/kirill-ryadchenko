@@ -8,7 +8,7 @@
     var lastIndex = (document.getElementsByClassName('item').length)-1;
     var first;
     var last;
-    var version = "V0.11 ";
+    var version = "V0.12 ";
     
     window.onload = function(){
         //viewport.scrollTop = 2700;
@@ -21,8 +21,8 @@
 
     if(isTouchDevice()){
         //viewport.addEventListener("touchmove", scrollingEvent, {passive: true});
-        window.addEventListener("touchmove", scrollingEvent, {passive: true});
-        //window.addEventListener("scroll", scrollingEvent, {passive: true});
+        //window.addEventListener("touchmove", scrollingEvent, {passive: true});
+        window.addEventListener("scroll", scrollingEvent, {passive: true});
     } else {
         //viewport.addEventListener("scroll", scrollingEvent, {passive: true});
         window.addEventListener("scroll", scrollingEvent, {passive: true});
