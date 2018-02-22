@@ -12,8 +12,18 @@
     window.onload = function(){
         viewport.scrollTop = 2700;
     }
+
+    function isTouchDevice(){
+        return 'ontouchstart' in document.documentElement;
+    }
+
+    if(isTouchDevice()){
+        viewport.addEventListener("touchmove", scrollingEvent, {passive: true});
+    } else {
+        viewport.addEventListener("scroll", scrollingEvent, {passive: true});
+    }
     
-    viewport.addEventListener("scroll", scrollingEvent, {passive: true});
+    //viewport.addEventListener("scroll", scrollingEvent, {passive: true});
     
     function scrollingEvent() {
         
