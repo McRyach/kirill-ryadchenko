@@ -33,7 +33,7 @@
         viewpixel = window.scrollY;//viewport.scrollTop;
         document.getElementById('debuger').innerHTML = "Pixel: "+ viewpixel;
         first = document.getElementsByClassName('item')[0];
-        last = document.getElementsByClassName('item')[lastIndex];
+        last = document.getElementsByClassName('item')[7];
 
         clearTimeout(isScrolling);
 
@@ -43,7 +43,7 @@
 
             if(viewpixel > 3099){
                 console.log("Add At the Bottom");
-                carousel.insertBefore(first, last);
+                carousel.insertBefore(first, null);
                 //viewport.scrollTop = viewpixel-700;
                 window.scroll(0, viewpixel-700);
             }
@@ -55,7 +55,7 @@
                 window.scroll(0,viewpixel+700);
             }
 
-        }, 3);
+        }, 33);
     }
 
 
