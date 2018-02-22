@@ -8,6 +8,7 @@
     var lastIndex = (document.getElementsByClassName('item').length)-1;
     var first;
     var last;
+    var version = "V0.8 ";
     
     window.onload = function(){
         //viewport.scrollTop = 2700;
@@ -31,19 +32,19 @@
     function scrollingEvent() {
         
         viewpixel = window.scrollY;//viewport.scrollTop;
-        document.getElementById('debuger').innerHTML = "Pixel: "+ viewpixel;
+        document.getElementById('debuger').innerHTML = version +"Pixel: "+ viewpixel;
         first = document.getElementsByClassName('item')[0];
-        last = document.getElementsByClassName('item')[lastIndex];
+        last = document.getElementsByClassName('item')[7];
 
         clearTimeout(isScrolling);
 
         isScrolling = setTimeout(function(){
             //console.log("List Position is: " + viewpixel);
-            document.getElementById('debuger').innerHTML = "Timeout: "+ viewpixel;
+            document.getElementById('debuger').innerHTML = version + "Timeout: "+ viewpixel;
 
             if(viewpixel > 3099){
                 console.log("Add At the Bottom");
-                carousel.insertBefore(first, last);
+                carousel.insertBefore(first, null);
                 //viewport.scrollTop = viewpixel-700;
                 window.scroll(0, viewpixel-700);
             }
@@ -55,7 +56,7 @@
                 window.scroll(0,viewpixel+700);
             }
 
-        }, 3);
+        }, 33);
     }
 
 
