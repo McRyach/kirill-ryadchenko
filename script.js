@@ -28,14 +28,15 @@
     function scrollingEvent() {
         
         viewpixel = viewport.scrollTop;
-        
+        document.getElementById('debuger').innerHTML = "Pixel: "+ viewpixel;
         first = document.getElementsByClassName('item')[0];
         last = document.getElementsByClassName('item')[lastIndex];
 
         clearTimeout(isScrolling);
 
         isScrolling = setTimeout(function(){
-            console.log("List Position is: " + viewpixel);
+            //console.log("List Position is: " + viewpixel);
+            document.getElementById('debuger').innerHTML = "Timeout: "+ viewpixel;
 
             if(viewpixel > 3099){
                 console.log("Add At the Bottom");
@@ -49,7 +50,7 @@
                 viewport.scrollTop = viewpixel +700;
             }
 
-        }, 66);
+        }, 3);
     }
 
 
