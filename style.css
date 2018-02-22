@@ -380,6 +380,8 @@ html, body {
 .debug{
     height: 0px;
     font-size: 2em;
+    position:fixed;
+    color: #ff003A;
 }
 
 
