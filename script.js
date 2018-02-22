@@ -8,7 +8,7 @@
     var lastIndex = (document.getElementsByClassName('item').length)-1;
     var first;
     var last;
-    var version = "V0.12 ";
+    var version = "V0.13 ";
     
     window.onload = function(){
         //viewport.scrollTop = 2700;
@@ -57,7 +57,7 @@
                 window.scroll(0,viewpixel+700);
             }
 
-        }, 33);
+        }, 300);
     }
 
 
