@@ -57,7 +57,7 @@
                 window.scroll(0,viewpixel+700);
             }
 
-        }, 100);
+        }, 200);
     }
 
 
