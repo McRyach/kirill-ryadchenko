@@ -31,37 +31,12 @@
                 console.log("Add At the Bottom");
                 carousel.insertBefore(first, last);
                 viewport.scrollTop = viewpixel-700;
-
-                //var carousel = document.getElementsByClassName('list')[0];
-                //carousel.lastChild.after(carousel.firstChild);
-                //viewport.scrollTop = viewpixel-700;
-                //carousel.lastChild.after(carousel.firstChild);
-                //carousel.appendChild(carousel.firstChild);
-                //viewpixel = (viewpixel-3099)+2700;
-                //viewport.scrollTop = viewpixel;
             }
 
             if(viewpixel < 1801){
                 console.log("Add At the Top");
                 carousel.insertBefore(last, first);
                 viewport.scrollTop = viewpixel +700;
-                //var carousel = document.getElementsByClassName('list')[0];
-                //viewpixel = 1801-(1801-viewpixel);
-                //carousel.prepend(carousel.lastChild);
-                //viewport.scrollTop = viewpixel+700;
-                //carousel.prepend(carousel.lastChild);
-                //viewport.scrollTop = viewpixel+700;
-                //carousel.prepend(carousel.lastChild);
-                //viewpixel = 2700-(1801-viewpixel);
-                //viewport.scrollTop = viewpixel;
-            }
-
-            if(first == carousel.lastChild){
-                console.log("Added Bottom");
-            }
-
-            if(last == carousel.firstChild){
-                console.log("Added Top");
             }
 
         }, 66);
