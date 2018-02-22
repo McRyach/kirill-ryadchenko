@@ -8,6 +8,7 @@
     var lastIndex = (document.getElementsByClassName('item').length)-1;
     var first;
     var last;
+    var version = "V0.8 ";
     
     window.onload = function(){
         //viewport.scrollTop = 2700;
@@ -31,7 +32,7 @@
     function scrollingEvent() {
         
         viewpixel = window.scrollY;//viewport.scrollTop;
-        document.getElementById('debuger').innerHTML = "Pixel: "+ viewpixel;
+        document.getElementById('debuger').innerHTML = version +"Pixel: "+ viewpixel;
         first = document.getElementsByClassName('item')[0];
         last = document.getElementsByClassName('item')[7];
 
@@ -39,7 +40,7 @@
 
         isScrolling = setTimeout(function(){
             //console.log("List Position is: " + viewpixel);
-            document.getElementById('debuger').innerHTML = "Timeout: "+ viewpixel;
+            document.getElementById('debuger').innerHTML = version + "Timeout: "+ viewpixel;
 
             if(viewpixel > 3099){
                 console.log("Add At the Bottom");
