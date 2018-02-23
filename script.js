@@ -6,7 +6,7 @@
     var lastIndex = document.getElementById('wheel').childElementCount;
     var first;
     var last;
-    var version = "V0.19 ";
+    var version = "V0.20 ";
     
     window.onload = function(){
         multiplier();
@@ -57,7 +57,7 @@
                 window.scroll(0,viewpixel+700);
             }
 
-        }, 50);
+        }, 30);
     }
 
 })();
