@@ -8,7 +8,7 @@
     var lastIndex = (document.getElementsByClassName('item').length)-1;
     var first;
     var last;
-    var version = "V0.14 ";
+    var version = "V0.16 ";
     
     window.onload = function(){
         //viewport.scrollTop = 2700;
