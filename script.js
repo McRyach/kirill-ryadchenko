@@ -16,12 +16,14 @@
     function isTouchDevice(){
         return 'ontouchstart' in document.documentElement;
     }
-
+    /*
     if(isTouchDevice()){
         window.addEventListener("scroll", scrollingEvent, {passive: true});
     } else {
         window.addEventListener("scroll", scrollingEvent, {passive: true});
-    }
+    } */
+
+    window.addEventListener("scroll", scrollingEvent, {passive: true});
     
     function multiplier(){
         for(i=0; i<lastIndex; i++){

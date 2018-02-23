@@ -361,6 +361,12 @@ html, body {
     font-size: 12px;
 }
 
+p{
+  margin: 5vw;
+  color: white;
+  font-size: 2em;
+}
+
 .block{
     
     height: 200px;
