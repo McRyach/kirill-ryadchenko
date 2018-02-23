@@ -6,7 +6,7 @@
     var lastIndex = document.getElementById('wheel').childElementCount;
     var first;
     var last;
-    var version = "V0.18 ";
+    var version = "V0.19 ";
     
     window.onload = function(){
         multiplier();
@@ -38,7 +38,7 @@
         viewpixel = window.scrollY;
         document.getElementById('debuger').innerHTML = version +"Pixel: "+ viewpixel;
         first = document.getElementsByClassName('item')[0];
-        last = document.getElementsByClassName('item')[7];
+        last = document.getElementsByClassName('item')[23];
 
         clearTimeout(isScrolling);
 
