@@ -373,6 +373,11 @@ p{
     transition: line-height 0.5s, height 0.5s;
 }
 
+.preview{
+  height: 600px;
+  transition: height 0.5s, overflow 0.5s;
+}
+
 
 .viewport{
     height: 100vh;
