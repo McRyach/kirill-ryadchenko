@@ -6,7 +6,7 @@
     var lastIndex = document.getElementById('wheel').childElementCount;
     var first;
     var last;
-    var version = "V0.20 ";
+    var version = "V0.21 ";
     
     window.onload = function(){
         multiplier();
