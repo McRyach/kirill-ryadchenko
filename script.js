@@ -7,6 +7,7 @@
     var first;
     var last;
     var version = "V0.21 ";
+    var deb = document.getElementById('debuger');
     
     window.onload = function(){
         multiplier();
@@ -42,7 +43,7 @@
     function scrollingEvent() {
         
         viewpixel = window.scrollY;
-        document.getElementById('debuger').innerHTML = version +"Pixel: "+ viewpixel;
+        deb.innerHTML = version +"Pixel: "+ viewpixel;
         first = document.getElementsByClassName('item')[0];
         last = document.getElementsByClassName('item')[23];
 
@@ -71,21 +72,21 @@
             var clickedItem = event.target;
             
             if(clickedItem.className == "item block"){
-                console.log("First Try - We Got IT! :"+ clickedItem.className);
+                
                 return clickedItem;
             } else {
                 clickedItem = clickedItem.parentNode;
+
                 if(clickedItem.className == "item block" || clickedItem.className == "item preview"){
-                    console.log("Second Try - We Got IT! :" + clickedItem.className);
                     return clickedItem;
                 } else {
                     console.log("All We have is :" + clickedItem.className);
                     clickedItem = clickedItem.parentNode;
+
                     if(clickedItem.className == "item block"){
-                        console.log("Third Try - We Got IT! :" + clickedItem.className);
                         return clickedItem;
                     } else {
-                        console.log("All We Got is :" + clickedItem.className);
+
                     }
                 }
             }
@@ -94,9 +95,10 @@
     };
 
     function clickEvent(e){
-        console.log("The Function Returned :" + wheelNode(e).id);
-        document.getElementById('debuger').innerHTML = version + "Clicked: "+ wheelNode(e).id;
+        var project = wheelNode(e).id;
+        deb.innerHTML = version + "Clicked: "+ project;
         e.stopPropagation();
+
     }
 
 })();
