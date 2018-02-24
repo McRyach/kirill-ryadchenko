@@ -6,7 +6,7 @@
     var lastIndex = document.getElementById('wheel').childElementCount;
     var first;
     var last;
-    var version = "V0.21 ";
+    var version = "V0.22 ";
     var deb = document.getElementById('debuger');
     
     window.onload = function(){
@@ -74,19 +74,22 @@
             if(clickedItem.className == "item block"){
                 
                 return clickedItem;
+                event.stopPropagation;
             } else {
                 clickedItem = clickedItem.parentNode;
 
                 if(clickedItem.className == "item block" || clickedItem.className == "item preview"){
                     return clickedItem;
+                    event.stopPropagation;
                 } else {
                     console.log("All We have is :" + clickedItem.className);
                     clickedItem = clickedItem.parentNode;
 
                     if(clickedItem.className == "item block"){
                         return clickedItem;
+                        event.stopPropagation;
                     } else {
-
+                        return null;
                     }
                 }
             }
@@ -95,6 +98,7 @@
     };
 
     function clickEvent(e){
+        deb.innerHTML = version + "Clicked !";
         var project = wheelNode(e).id;
         deb.innerHTML = version + "Clicked: "+ project;
         e.stopPropagation();
