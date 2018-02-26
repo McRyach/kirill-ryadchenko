@@ -6,7 +6,7 @@
     var lastIndex = document.getElementById('wheel').childElementCount;
     var first;
     var last;
-    var version = " V0.23 ";
+    var version = " V0.24 ";
     var deb = document.getElementById('debuger');
     
     window.onload = function(){
@@ -36,7 +36,12 @@
         }
     }
     
-    window.addEventListener("click", clickEvent, false);
+    if (isTouchDevice()){
+        window.addEventListener("click", clickEvent, false);    
+    } else {
+        window.addEventListener("click", clickEvent, false);    
+    }
+    
 
     window.addEventListener("scroll", scrollingEvent, {passive: true});
 
