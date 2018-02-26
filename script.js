@@ -6,7 +6,7 @@
     var lastIndex = document.getElementById('wheel').childElementCount;
     var first;
     var last;
-    var version = " V0.25 ";
+    var version = " V0.26 ";
     var deb = document.getElementById('debuger');
     
     window.onload = function(){
