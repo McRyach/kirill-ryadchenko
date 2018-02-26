@@ -37,9 +37,23 @@
     }
     
     if (isTouchDevice()){
-        window.addEventListener("touchstart", clickEvent, false);    
+        //window.addEventListener("touchstart", clickEvent, false);  
+        window.on('touchstart', function(ev){
+            startX = getCoord(ev, 'X');
+            startY = getCoord(ev, 'Y');
+        }).on('touchend', function(ev){
+            if (Math.abs(getCoord(ev, 'X') - startX) < 20 && Math.abs(getCoord(ev, 'Y') - startY) < 20){
+                ev.preventDefault();
+                clickEvent.call(this, ev);
+            }
+        })
     } else {
         window.addEventListener("click", clickEvent, false);    
+    }
+
+    //temporary location of helper function. It should go at the bottom of the code
+    function getCoord(e, c){
+        return /touch/.test(e.type) ? (e.originalEvent || e).changedTouches[0]['page'+c]: e['page' + c];
     }
     
 
