@@ -408,11 +408,10 @@ p{
     font-family: 'YiBaiti', sans-serif;
     
     width:100%;
-    height:200px;
     color: #ff003A;
     text-align: center;
     vertical-align: middle;
-    line-height: 130px;
+    line-height: 3em;
     float: left;
     margin-top: 250px;
     margin-bottom: 250px;
