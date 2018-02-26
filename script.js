@@ -6,7 +6,7 @@
     var lastIndex = document.getElementById('wheel').childElementCount;
     var first;
     var last;
-    var version = "V0.22 ";
+    var version = " V0.23 ";
     var deb = document.getElementById('debuger');
     
     window.onload = function(){
@@ -36,7 +36,7 @@
         }
     }
     
-    carousel.addEventListener("click", clickEvent, false);
+    window.addEventListener("click", clickEvent, false);
 
     window.addEventListener("scroll", scrollingEvent, {passive: true});
 
@@ -68,39 +68,65 @@
     }
 
     function wheelNode(event){
-        if(event.target !== event.curentTarget){
+        //if(event.target !== event.curentTarget){
             var clickedItem = event.target;
-            
-            if(clickedItem.className == "item block"){
-                
+            var itemClass = clickedItem.className;
+            console.log("Getting The Wheel Item!" + itemClass);
+            if(itemClass == "item block"){
+                console.log("First Try Result");
                 return clickedItem;
                 event.stopPropagation;
             } else {
                 clickedItem = clickedItem.parentNode;
 
                 if(clickedItem.className == "item block" || clickedItem.className == "item preview"){
+                    console.log("Second Try Result!");
                     return clickedItem;
                     event.stopPropagation;
                 } else {
-                    console.log("All We have is :" + clickedItem.className);
                     clickedItem = clickedItem.parentNode;
 
                     if(clickedItem.className == "item block"){
+                        console.log("Third Try Result");
                         return clickedItem;
                         event.stopPropagation;
                     } else {
+                        console.log("We Couldn not catch it!");
+                        //console.log("We are Clicking :" + clickedItem.className);
                         return null;
                     }
                 }
             }
-            console.log("The Item Clicked is: " + clickedItem.id);
-        }
+        //}
     };
 
     function clickEvent(e){
+        console.log("We Clicked :" + e.target.tagName);
         deb.innerHTML = version + "Clicked !";
-        var project = wheelNode(e).id;
-        deb.innerHTML = version + "Clicked: "+ project;
+        var eTar = e.target;
+        
+        if(eTar.tagName == 'HTML'){
+            console.log('It is a white space');    
+        } else {
+            console.log("We Hit :" + eTar.id);
+            console.log("We Got :" + eTar.className);
+            eTar = wheelNode(e);
+            var proClass = eTar.className;
+            console.log("From wheelNode function :" + proClass);
+            if (proClass == "item block"){
+                console.log("removing BLOCK adding PREVIEW");
+                eTar.classList.add('preview');
+                eTar.classList.remove('block');
+            } else if (proClass == "item preview"){
+                console.log("Removing PREVIEW adding OPEN");
+                eTar.classList.remove('preview');
+                eTar.classList.add('open');
+            }
+
+        }
+
+       console.log("/////////////////////////////////////////////////////////////////");
+        deb.innerHTML = version + "Clicked: "+ eTar.id;
         e.stopPropagation();
 
     }
