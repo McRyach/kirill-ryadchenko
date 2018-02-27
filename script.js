@@ -9,6 +9,7 @@
     var version = " V0.28 ";
     var deb = document.getElementById('debuger');
     var clientX, clientY;
+    var scrollBack;
     
     window.onload = function(){
         multiplier();
@@ -38,6 +39,7 @@
     }
     
     if (isTouchDevice()){
+        scrollBack = 200;
         //window.addEventListener("touchstart", clickEvent, false);
         console.log("This is touch device");  
         window.addEventListener('touchstart', function(e){
@@ -66,6 +68,7 @@
         }, false);
 
     } else {
+        scrollBack = 50;
         window.addEventListener("click", clickEvent, false);    
     }
 
@@ -92,16 +95,16 @@
             if(viewpixel > 10520){
                 console.log("Add At the Bottom");
                 carousel.insertBefore(first, null);
-                //window.scroll(0, viewpixel-700);
+                window.scroll(0, viewpixel-700);
             }
 
             if(viewpixel < 5260){
                 console.log("Add At the Top");
                 carousel.insertBefore(last, first);
-                //window.scroll(0,viewpixel+700);
+                window.scroll(0,viewpixel+700);
             }
 
-        }, 30);
+        }, scrollBack);
     }
 
     function wheelNode(event){
