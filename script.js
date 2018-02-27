@@ -6,8 +6,9 @@
     var lastIndex = document.getElementById('wheel').childElementCount;
     var first;
     var last;
-    var version = " V0.26 ";
+    var version = " V0.27 ";
     var deb = document.getElementById('debuger');
+    var clientX, clientY;
     
     window.onload = function(){
         multiplier();
@@ -37,16 +38,33 @@
     }
     
     if (isTouchDevice()){
-        //window.addEventListener("touchstart", clickEvent, false);  
-        window.on('touchstart', function(ev){
-            startX = getCoord(ev, 'X');
-            startY = getCoord(ev, 'Y');
-        }).on('touchend', function(ev){
-            if (Math.abs(getCoord(ev, 'X') - startX) < 20 && Math.abs(getCoord(ev, 'Y') - startY) < 20){
-                ev.preventDefault();
-                clickEvent.call(this, ev);
+        //window.addEventListener("touchstart", clickEvent, false);
+        console.log("This is touch device");  
+        window.addEventListener('touchstart', function(e){
+           //
+           clientX = e.touches[0].clientX;
+           clientY = e.touches[0].clientY;
+
+        },false);
+
+        window.addEventListener('touchend', function(e){
+            //
+            var deltaX, deltaY;
+
+            deltaX = e.changedTouches[0].clientX - clientX;
+            deltaY = e.changedTouches[0].clientY - clientY;
+            console.log("Delta X: " + deltaX);
+            console.log("DeltaY: " + deltaY);
+
+            if(deltaY < 20){
+                deb.innerHTML = version + "It's a ckick! ";
+                clickEvent(e);
+            } else {
+                deb.innerHTML = version + "It's a scroll!!!!";
             }
-        })
+
+        }, false);
+
     } else {
         window.addEventListener("click", clickEvent, false);    
     }
