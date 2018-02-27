@@ -93,12 +93,22 @@
             //document.getElementById('debuger').innerHTML = version + "Timeout: "+ viewpixel;
 
             if(viewpixel > 10520){
+                if(first.className == "item preview"){
+                    first.classList.add('block');
+                    first.classList.remove('preview');
+                    viewpixel = viewpixel-400;
+                }
                 console.log("Add At the Bottom");
                 carousel.insertBefore(first, null);
                 window.scroll(0, viewpixel-700);
             }
 
             if(viewpixel < 5260){
+                if(last.className == "item preview"){
+                    last.classList.add('block');
+                    last.classList.remove('preview');
+                    viewpixel = viewpixel;
+                }
                 console.log("Add At the Top");
                 carousel.insertBefore(last, first);
                 window.scroll(0,viewpixel+700);
@@ -112,7 +122,7 @@
             var clickedItem = event.target;
             var itemClass = clickedItem.className;
             console.log("Getting The Wheel Item!" + itemClass);
-            if(itemClass == "item block"){
+            if(itemClass == "item block" || itemClass == "item preview"){
                 console.log("First Try Result");
                 return clickedItem;
                 event.stopPropagation;
@@ -126,7 +136,7 @@
                 } else {
                     clickedItem = clickedItem.parentNode;
 
-                    if(clickedItem.className == "item block"){
+                    if(clickedItem.className == "item block" || clickedItem.className == "item preview"){
                         console.log("Third Try Result");
                         return clickedItem;
                         event.stopPropagation;
@@ -140,13 +150,22 @@
         //}
     };
 
+    function suspect(){
+        var suspect = document.getElementsByClassName('preview')[0];
+        if (suspect !== undefined){
+            suspect.classList.add('block');
+            suspect.classList.remove('preview');
+        } 
+    }
+
     function clickEvent(e){
         console.log("We Clicked :" + e.target.tagName);
         deb.innerHTML = version + "Clicked !";
         var eTar = e.target;
         
         if(eTar.tagName == 'HTML'){
-            console.log('It is a white space');    
+            console.log('It is a white space'); 
+            suspect();
         } else {
             console.log("We Hit :" + eTar.id);
             console.log("We Got :" + eTar.className);
@@ -154,6 +173,7 @@
             var proClass = eTar.className;
             console.log("From wheelNode function :" + proClass);
             if (proClass == "item block"){
+                suspect();
                 console.log("removing BLOCK adding PREVIEW");
                 eTar.classList.add('preview');
                 eTar.classList.remove('block');
