@@ -6,7 +6,7 @@
     var lastIndex = document.getElementById('wheel').childElementCount;
     var first;
     var last;
-    var version = " V0.27 ";
+    var version = " V0.28 ";
     var deb = document.getElementById('debuger');
     var clientX, clientY;
     
@@ -51,12 +51,12 @@
             //
             var deltaX, deltaY;
 
-            deltaX = e.changedTouches[0].clientX - clientX;
+            //deltaX = e.changedTouches[0].clientX - clientX;
             deltaY = e.changedTouches[0].clientY - clientY;
             console.log("Delta X: " + deltaX);
             console.log("DeltaY: " + deltaY);
 
-            if(deltaY < 20){
+            if(Math.abs(deltaY) < 20){
                 deb.innerHTML = version + "It's a ckick! ";
                 clickEvent(e);
             } else {
@@ -92,13 +92,13 @@
             if(viewpixel > 10520){
                 console.log("Add At the Bottom");
                 carousel.insertBefore(first, null);
-                window.scroll(0, viewpixel-700);
+                //window.scroll(0, viewpixel-700);
             }
 
             if(viewpixel < 5260){
                 console.log("Add At the Top");
                 carousel.insertBefore(last, first);
-                window.scroll(0,viewpixel+700);
+                //window.scroll(0,viewpixel+700);
             }
 
         }, 30);
