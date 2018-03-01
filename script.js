@@ -6,7 +6,7 @@
     var lastIndex = document.getElementById('wheel').childElementCount;
     var first;
     var last;
-    var version = " V0.31 ";
+    var version = " V0.32 ";
     var deb = document.getElementById('debuger');
     var clientX, clientY;
     var scrollBack;
@@ -55,7 +55,6 @@
 
             //deltaX = e.changedTouches[0].clientX - clientX;
             deltaY = e.changedTouches[0].clientY - clientY;
-            console.log("Delta X: " + deltaX);
             console.log("DeltaY: " + deltaY);
 
             if(Math.abs(deltaY) < 20){
@@ -71,11 +70,6 @@
         scrollBack = 50;
         window.addEventListener("click", clickEvent, false);    
     }
-
-    //temporary location of helper function. It should go at the bottom of the code
-    function getCoord(e, c){
-        return /touch/.test(e.type) ? (e.originalEvent || e).changedTouches[0]['page'+c]: e['page' + c];
-    }
     
 
     window.addEventListener("scroll", scrollingEvent, {passive: true});
@@ -90,8 +84,7 @@
         clearTimeout(isScrolling);
 
         isScrolling = setTimeout(function(){
-            //document.getElementById('debuger').innerHTML = version + "Timeout: "+ viewpixel;
-
+            
             if(viewpixel > 10520){
                 if(first.className == "item preview"){
                     first.classList.add('block');
@@ -118,7 +111,7 @@
     }
 
     function wheelNode(event){
-        //if(event.target !== event.curentTarget){
+        
             var clickedItem = event.target;
             var itemClass = clickedItem.className;
             console.log("Getting The Wheel Item!" + itemClass);
@@ -142,12 +135,12 @@
                         event.stopPropagation;
                     } else {
                         console.log("We Couldn not catch it!");
-                        //console.log("We are Clicking :" + clickedItem.className);
+                        
                         return null;
                     }
                 }
             }
-        //}
+        
     };
 
     function suspect(){
