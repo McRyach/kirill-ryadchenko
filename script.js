@@ -6,10 +6,11 @@
     var lastIndex = document.getElementById('wheel').childElementCount;
     var first;
     var last;
-    var version = " V0.32 ";
+    var version = " V0.33 ";
     var deb = document.getElementById('debuger');
     var clientX, clientY;
     var scrollBack;
+    var bodyHTML = document.body;
     
     window.onload = function(){
         multiplier();
@@ -174,6 +175,8 @@
                 console.log("Removing PREVIEW adding OPEN");
                 eTar.classList.remove('preview');
                 eTar.classList.add('open');
+                bodyHTML.style.overflow = "hidden";
+                eTar.childNodes[3].scrollIntoView(true);
             }
 
         }
