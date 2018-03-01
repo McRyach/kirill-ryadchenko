@@ -1,0 +1,127 @@
+
+
+ html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+  }
+  
+  /* Sections
+     ========================================================================== */
+  
+  /**
+   * Remove the margin in all browsers.
+   */
+  
+  body {
+    margin: 0;
+    /* scroll-behavior: smooth; */
+    -webkit-overflow-scrolling: touch;
+    
+  }
+  
+  /**
+   * Correct the font size and margin on `h1` elements within `section` and
+   * `article` contexts in Chrome, Firefox, and Safari.
+   */
+  
+  h1 {
+    font-size: 5em;
+    margin: 1.3em 0;
+    font-weight: normal;
+  }
+
+  h2 {
+    color: white;
+    font-size: 5em;
+    font-weight: normal;
+
+  }
+  
+img{
+  max-width: 100%;
+  min-height: 100%;
+}
+
+@font-face{
+    font-family: 'YiBaiti';
+    src: url('msyi.ttf') 
+}
+
+html, body {
+    font-family: 'YiBaiti', sans-serif;
+    font-size: 12px;
+    text-align: center;
+    margin: 0;
+    -webkit-overflow-scrolling: touch;
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+p{
+  margin: 9vw;
+  color: white;
+  font-size: 2em;
+  height: 100%;
+  transition: height 0.3s, margin 0.6s;
+}
+
+
+.open{
+  height: 100% !important;
+  overflow: hidden;
+  background-color: #706f6f !important;
+}
+
+.open .preambule {
+  height: 0%;
+  overflow: hidden;
+  transition: height 0.5s;
+}
+
+.open .project{
+  height: 100%;
+  width: 100%;
+  background: #212121;
+  overflow: auto;
+  transition: height 0.5s;
+}
+
+
+
+.project{
+  overflow: hidden;
+  transition: height 0.5s;
+  background-color: #212121;
+}
+
+
+
+
+@media screen and (max-width: 1100px){ 
+  /* iPhone and smaller */
+  .item{
+    color: aqua;
+    background-attachment: local;
+  }
+
+  .viewport{
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media screen and (min-width: 1100px){
+  img{
+    max-width: 80%;
+    min-height: 100%;
+  }
+}
+
+@media screen and (min-width: 1601px) {
+  /* VERY LARGE SCREEN */
+  img{
+    max-width: 65%;
+    max-height: 80%;
+  }
+}
+
