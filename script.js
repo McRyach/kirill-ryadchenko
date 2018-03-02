@@ -12,6 +12,7 @@
     var scrollBack;
     var outerBody = document.body;
     var outerHTML = document.documentElement;
+    var preDef = false;
     
     window.onload = function(){
         multiplier();
@@ -74,10 +75,14 @@
     }
     
 
-    window.addEventListener("scroll", scrollingEvent, {passive: true});
+    window.addEventListener("scroll", scrollingEvent, false);//{passive: true});
 
-    function scrollingEvent() {
+    function scrollingEvent(e) {
         
+        if(preDef){
+            e.preventDafault();
+        }
+
         viewpixel = window.scrollY;
         deb.innerHTML = version +"Pixel: "+ viewpixel;
         first = document.getElementsByClassName('item')[0];
@@ -178,9 +183,7 @@
                 eTar.classList.add('open');
                 outerBody.style.overflow = "hidden";
                 outerHTML.style.overflow = "hidden";
-                outerBody.addEventListener('touchmove', function(e){
-                    e.preventDefault();
-                }, false);
+                preDef = true;
                 eTar.childNodes[3].scrollIntoView(true);
             }
 
