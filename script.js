@@ -6,7 +6,7 @@
     var lastIndex = document.getElementById('wheel').childElementCount;
     var first;
     var last;
-    var version = " V0.38 ";
+    var version = " V0.39 ";
     var deb = document.getElementById('debuger');
     var clientX, clientY;
     var scrollBack;
@@ -75,13 +75,9 @@
     }
     
 
-    window.addEventListener("scroll", scrollingEvent, false);//{passive: true});
+    window.addEventListener("scroll", scrollingEvent, {passive: true});
 
     function scrollingEvent(e) {
-        
-        if(preDef){
-            e.preventDafault();
-        }
 
         viewpixel = window.scrollY;
         deb.innerHTML = version +"Pixel: "+ viewpixel;

@@ -23,6 +23,8 @@
   
   body {
     margin: 0;
+    overflow: hidden;
+    
     /* scroll-behavior: smooth; */
     /*-webkit-overflow-scrolling: touch;*/
     
@@ -436,8 +438,10 @@ iframe{
 
 .project{
   height: 0px;
-  overflow: hidden;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch !important;
   transition: height 0.5s;
+
 }
 
 .return{
