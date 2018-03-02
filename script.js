@@ -6,7 +6,7 @@
     var lastIndex = document.getElementById('wheel').childElementCount;
     var first;
     var last;
-    var version = " V0.34 ";
+    var version = " V0.35 ";
     var deb = document.getElementById('debuger');
     var clientX, clientY;
     var scrollBack;
@@ -177,7 +177,9 @@
                 eTar.classList.remove('preview');
                 eTar.classList.add('open');
                 outerBody.style.overflow = "hidden";
+                outerBody.style.position = "relative";
                 outerHTML.style.overflow = "hidden";
+                outerHTML.style.position = "relative";
                 eTar.childNodes[3].scrollIntoView(true);
             }
 
