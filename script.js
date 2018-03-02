@@ -6,7 +6,7 @@
     var lastIndex = document.getElementById('wheel').childElementCount;
     var first;
     var last;
-    var version = " V0.37 ";
+    var version = " V0.38 ";
     var deb = document.getElementById('debuger');
     var clientX, clientY;
     var scrollBack;
@@ -177,11 +177,10 @@
                 eTar.classList.remove('preview');
                 eTar.classList.add('open');
                 outerBody.style.overflow = "hidden";
-                outerBody.style.position = "relative";
                 outerHTML.style.overflow = "hidden";
-                outerHTML.style.position = "relative";
-                carousel.style.overflow = "hidden";
-                carousel.style.position = "relative";
+                outerBody.addEventListener('touchmove', function(e){
+                    e.preventDefault();
+                }, false);
                 eTar.childNodes[3].scrollIntoView(true);
             }
 
