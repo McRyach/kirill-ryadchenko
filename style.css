@@ -12,8 +12,7 @@
  html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
-    overflow: hidden;
-    position: fixed;
+   
   }
   
   /* Sections
@@ -25,8 +24,7 @@
   
   body {
     margin: 0;
-    overflow: hidden;
-    position: fixed;
+
 
     /* scroll-behavior: smooth; */
     /*-webkit-overflow-scrolling: touch;*/

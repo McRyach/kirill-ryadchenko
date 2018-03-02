@@ -6,7 +6,7 @@
     var lastIndex = document.getElementById('wheel').childElementCount;
     var first;
     var last;
-    var version = " V0.40 ";
+    var version = " V0.41 ";
     var deb = document.getElementById('debuger');
     var clientX, clientY;
     var scrollBack;
@@ -177,6 +177,10 @@
                 console.log("Removing PREVIEW adding OPEN");
                 eTar.classList.remove('preview');
                 eTar.classList.add('open');
+                var fixedUnderlay = eTar.childNodes[3];
+                fixedUnderlay.addEventListener('touchmove', function(e){
+                    e.preventDefault();
+                }, false);
                 outerBody.style.overflow = "hidden";
                 outerHTML.style.overflow = "hidden";
                 preDef = true;
