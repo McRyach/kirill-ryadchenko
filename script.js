@@ -154,6 +154,10 @@
         } 
     }
 
+    var freezeUp = function(e){
+        e.preventDefault();
+    }
+
     function clickEvent(e){
         console.log("We Clicked :" + e.target.tagName);
         deb.innerHTML = version + "Clicked !";
@@ -183,6 +187,8 @@
                 }, false);
                 outerBody.style.overflow = "hidden";
                 outerHTML.style.overflow = "hidden";
+                window.removeEventListener("scroll", scrollingEvent, {passive: true});
+                document.body.addEventListener("touchmove", freezeUp, false);
                 preDef = true;
                 eTar.childNodes[3].scrollIntoView(true);
             }
