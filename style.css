@@ -437,6 +437,12 @@ iframe{
   transition: height 0.5s;
 }
 
+.hidden{
+  height: 0px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
 .project{
   height: 0px;
   overflow: auto;

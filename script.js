@@ -6,7 +6,7 @@
     var lastIndex = document.getElementById('wheel').childElementCount;
     var first;
     var last;
-    var version = " V0.41 ";
+    var version = " V0.42 ";
     var deb = document.getElementById('debuger');
     var clientX, clientY;
     var scrollBack;
@@ -158,6 +158,14 @@
         e.preventDefault();
     }
 
+    function hideBlocks(){
+        var blocks = document.getElementsByClassName('block');
+
+        for(var i=0, max=blocks.length; i<max; i++){
+            blocks[i].classList.add('hidden');
+        }
+    }
+
     function clickEvent(e){
         console.log("We Clicked :" + e.target.tagName);
         deb.innerHTML = version + "Clicked !";
@@ -189,6 +197,7 @@
                 outerHTML.style.overflow = "hidden";
                 window.removeEventListener("scroll", scrollingEvent, {passive: true});
                 document.body.addEventListener("touchmove", freezeUp, false);
+                hideBlocks();
                 preDef = true;
                 eTar.childNodes[3].scrollIntoView(true);
             }
