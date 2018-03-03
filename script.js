@@ -6,7 +6,7 @@
     var lastIndex = document.getElementById('wheel').childElementCount;
     var first;
     var last;
-    var version = " V0.42 ";
+    var version = " V0.43 ";
     var deb = document.getElementById('debuger');
     var clientX, clientY;
     var scrollBack;
@@ -160,10 +160,16 @@
 
     function hideBlocks(){
         var blocks = document.getElementsByClassName('block');
+        var proj = document.getElementsByClassName('open')[0];
+        
+        proj.childNodes[1].classList.add('hidden');
+        proj.childNodes[5].classList.add('hidden');
 
         for(var i=0, max=blocks.length; i<max; i++){
             blocks[i].classList.add('hidden');
         }
+
+
     }
 
     function clickEvent(e){
