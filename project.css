@@ -24,16 +24,13 @@
    * `article` contexts in Chrome, Firefox, and Safari.
    */
   
-  h1 {
-    font-size: 5em;
-    margin: 1.3em 0;
-    font-weight: normal;
-  }
 
-  h2 {
+  h3 {
     color: white;
     font-size: 5em;
     font-weight: normal;
+    -webkit-margin-before: 0.5em;
+    -webkit-margin-after: 0.5em;
 
   }
   
