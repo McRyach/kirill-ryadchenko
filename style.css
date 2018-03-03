@@ -405,6 +405,11 @@ iframe{
   transition: height 0.3s, margin 0.5s;
 }
 
+.backBody {
+  overflow: hidden;
+  background-color: black;
+}
+
 .open{
   height: 100% !important;
   overflow: hidden;

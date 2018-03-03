@@ -6,7 +6,7 @@
     var lastIndex = document.getElementById('wheel').childElementCount;
     var first;
     var last;
-    var version = " V0.46 ";
+    var version = " V0.47 ";
     var deb = document.getElementById('debuger');
     var clientX, clientY;
     var scrollBack;
@@ -125,7 +125,7 @@
             } else {
                 clickedItem = clickedItem.parentNode;
 
-                if(clickedItem.className == "item block" || clickedItem.className == "item preview"){
+                if(clickedItem.className == "item block" || clickedItem.className == "item preview" || clickedItem.className == "return"){
                     console.log("Second Try Result!");
                     return clickedItem;
                     event.stopPropagation;
@@ -154,10 +154,6 @@
         } 
     }
 
-    var freezeUp = function(e){
-        e.preventDefault();
-    }
-
     function hideBlocks(){
         var blocks = document.getElementsByClassName('block');
         var proj = document.getElementsByClassName('open')[0];
@@ -168,7 +164,12 @@
         for(var i=0, max=blocks.length; i<max; i++){
             blocks[i].classList.add('hidden');
         }
+        outerBody.classList.add('backBody');
+        outerHTML.classList.add('backBody');
 
+    }
+
+    function showBlocks(){
 
     }
 
@@ -195,17 +196,16 @@
                 console.log("Removing PREVIEW adding OPEN");
                 eTar.classList.remove('preview');
                 eTar.classList.add('open');
-                var fixedUnderlay = eTar.childNodes[3];
-                fixedUnderlay.addEventListener('touchmove', function(e){
-                    e.preventDefault();
-                }, false);
-                outerBody.style.overflow = "hidden";
-                outerHTML.style.overflow = "hidden";
-                window.removeEventListener("scroll", scrollingEvent, {passive: true});
-                document.body.addEventListener("touchmove", freezeUp, false);
+                //var fixedUnderlay = eTar.childNodes[3];
+                //fixedUnderlay.addEventListener('touchmove', function(e){
+                //    e.preventDefault();
+                //}, false);
+
                 hideBlocks();
                 preDef = true;
                 eTar.childNodes[3].scrollIntoView(true);
+            } else if (proClass == "return") {
+
             }
 
         }
