@@ -43,9 +43,12 @@
   }
 
   h2 {
-    color: white;
-    font-size: 5em;
+    color: #404040;
+    font-size: 3em;
     font-weight: normal;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    line-height: 1.7em;
 
   }
   
@@ -384,7 +387,7 @@ p{
 iframe{
   border: none;
   width: 100%;
-  height: 90vh;
+  height: 94vh;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -407,7 +410,8 @@ iframe{
   overflow: hidden;
   margin-top: 0px !important;
   margin-bottom: 0px !important;
-  background-color: #706f6f !important;
+  background-color: black;
+  position: relative;
 }
 
 .open .preambule {
@@ -445,6 +449,12 @@ iframe{
   margin-bottom: 0px !important;
 }
 
+.hidden h1 {
+  height: 0px;
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+}
+
 .project{
   height: 0px;
   overflow: auto;
@@ -455,8 +465,11 @@ iframe{
 }
 
 .return{
-  height: 10vh;
+  height: 6vh;
   background-color: black;
+  /*position: absolute;
+  bottom: 0px; */
+  width: 100%;
 }
 
 .viewport{
