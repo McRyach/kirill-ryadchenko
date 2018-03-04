@@ -36,7 +36,7 @@
   
 img{
   max-width: 100%;
-  min-height: 100%;
+  max-height: 100%;
 }
 
 @font-face{
@@ -86,7 +86,7 @@ p{
 
 
 .project{
-  overflow: hidden;
+  
   transition: height 0.5s;
   background-color: #212121;
 }

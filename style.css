@@ -432,6 +432,7 @@ iframe{
   background: #212121;
   overflow: visible;
   transition: height 0.5s;
+  -webkit-overflow-scrolling: touch;
 }
 
 .preview{
