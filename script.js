@@ -6,18 +6,21 @@
     var lastIndex = document.getElementById('wheel').childElementCount;
     var first;
     var last;
-    var version = " V0.48 ";
+    var version = " V0.49 ";
     var deb = document.getElementById('debuger');
     var clientX, clientY;
     var scrollBack;
     var outerBody = document.body;
     var outerHTML = document.documentElement;
-    var preDef = false;
+    var goTop;
+    //var preDef = false;
     
     window.onload = function(){
         multiplier();
         window.scrollTo(0,7900);
     }
+
+
 
     function isTouchDevice(){
         return 'ontouchstart' in document.documentElement;
@@ -39,6 +42,7 @@
         for(i=0; i<lastIndex; i++){
             carousel.appendChild(document.getElementsByClassName('item')[i].cloneNode(true));
         }
+
     }
     
     if (isTouchDevice()){
@@ -167,9 +171,28 @@
         outerBody.classList.add('backBody');
         outerHTML.classList.add('backBody');
 
+        window.removeEventListener("scroll", scrollingEvent, {passive: true});
+
     }
 
     function showBlocks(){
+        var proj = document.getElementsByClassName('open')[0];
+        var blocks = document.getElementsByClassName('block');
+        
+        outerBody.classList.remove('backBody');
+        outerHTML.classList.remove('backBody');
+
+        proj.childNodes[1].classList.remove('hidden');
+        proj.childNodes[5].classList.remove('hidden');
+
+        for(var i=0, max=blocks.length; i<max; i++){
+            blocks[i].classList.remove('hidden');
+        }
+
+        proj.classList.add('block');
+        proj.classList.remove('open');
+
+        window.addEventListener("scroll", scrollingEvent, {passive: true});
 
     }
 
@@ -196,17 +219,27 @@
                 console.log("Removing PREVIEW adding OPEN");
                 eTar.classList.remove('preview');
                 eTar.classList.add('open');
-                //var fixedUnderlay = eTar.childNodes[3];
-                //fixedUnderlay.addEventListener('touchmove', function(e){
-                //    e.preventDefault();
-                //}, false);
+                var fixedUnderlay = eTar.childNodes[3];
 
+                fixedUnderlay.addEventListener('touchmove', function(e){
+                    e.preventDefault();
+                }, false);
+                
                 hideBlocks();
-                preDef = true;
-                eTar.childNodes[3].scrollIntoView(true);
-            } else if (proClass == "return") {
+                //preDef = true;
+                //eTar.childNodes[3].scrollIntoView(true);
+                eTar.scrollIntoView({behavior: "instant"});
+                
+                goTop = setTimeout(function(){
+                    eTar.scrollIntoView(true);
+                }, 400);
 
+            } else if (proClass == "return") {
+                console.log("Return of The Jedi!");
+                showBlocks();
             }
+            //eTar.scrollIntoView(true);
+            
 
         }
 
