@@ -229,7 +229,7 @@
                 //preDef = true;
                 
                 eTar.scrollIntoView({behavior: "instant"});
-                if(false == isTouchDevice()){
+                if(true){
                     goTop = setTimeout(function(){
                         eTar.scrollIntoView(true);
                     }, 400);
