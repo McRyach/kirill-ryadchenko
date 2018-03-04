@@ -6,7 +6,7 @@
     var lastIndex = document.getElementById('wheel').childElementCount;
     var first;
     var last;
-    var version = " V0.55 ";
+    var version = " V0.56 ";
     var deb = document.getElementById('debuger');
     var clientX, clientY;
     var scrollBack;
