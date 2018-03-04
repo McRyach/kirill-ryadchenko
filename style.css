@@ -427,7 +427,7 @@ iframe{
 }
 
 .open .project{
-  height: 100vh;
+  height: 100%; /*vh; */
   width: 100%;
   background: #212121;
   overflow: visible;
