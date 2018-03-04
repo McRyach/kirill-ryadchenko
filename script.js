@@ -6,7 +6,7 @@
     var lastIndex = document.getElementById('wheel').childElementCount;
     var first;
     var last;
-    var version = " V0.50 ";
+    var version = " V0.51 ";
     var deb = document.getElementById('debuger');
     var clientX, clientY;
     var scrollBack;
@@ -227,12 +227,13 @@
                 
                 hideBlocks();
                 //preDef = true;
-                //eTar.childNodes[3].scrollIntoView(true);
-                eTar.scrollIntoView({behavior: "instant"});
                 
-                //goTop = setTimeout(function(){
-                //    eTar.scrollIntoView(true);
-                //}, 400);
+                eTar.scrollIntoView({behavior: "instant"});
+                if(false == isTouchDevice()){
+                    goTop = setTimeout(function(){
+                        eTar.scrollIntoView(true);
+                    }, 400);
+                }
 
             } else if (proClass == "return") {
                 console.log("Return of The Jedi!");
