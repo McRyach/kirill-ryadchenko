@@ -465,7 +465,7 @@ iframe{
   height: 0px;
   overflow: auto;
   -webkit-overflow-scrolling: touch !important;
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
   transition: height 0.5s;
 
 }
