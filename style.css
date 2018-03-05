@@ -38,7 +38,7 @@
   
   h1 {
     font-size: 5em;
-    margin: 1em 0;
+    margin: 1.3em 0;
     font-weight: normal;
   }
 
@@ -379,7 +379,6 @@ html, body {
 
 p{
   margin: 9vw 9vw 2vw;
-  margin-bottom: 2ew;
   color: white;
   font-size: 2em;
   height: 100%;
@@ -521,35 +520,35 @@ iframe{
 
 
 #FLOMASTER{
-    background-image: url('01_Par.jpg');
+    background-image: url('FLOMASTER/cover.jpg');
 }
 
 #DESIGENCE{
-    background-image: url('01_Par.jpg');
+    background-image: url('DESIGENCE/cover.jpg');
 }
 
 #DISCIPLINARY_ENTROPY{
-    background-image: url('01_Par.jpg');
+    background-image: url('DISCIPLINARY_ENTROPY/cover2.jpg');
 }
 
 #OBLIQUE_FIGURATION{
-    background-image: url('01_Par.jpg');
+    background-image: url('OBLIQUE_FIGURATION/cover.jpg');
 }
 
 #REFLAXING{
-    background-image: url('01_Par.jpg');
+    background-image: url('REFLAXING/cover.jpg');
 }
 
 #VOIDING{
-    background-image: url('01_Par.jpg');
+    background-image: url('VOIDING/cover.jpg');
 }
 
 #DYNAMIC_MATERIAL_CULTURE{
-    background-image: url('01_Par.jpg');
+    background-image: url('DYNAMIC_MATERIAL_CULTURE/cover.jpg');
 }
 
 #MESH_FARM{
-    background-image: url('01_Par.jpg');
+    background-image: url('MESH_FARM/cover.jpg');
 }
 
 @media screen and (max-width: 1100px){ 
