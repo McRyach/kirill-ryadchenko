@@ -175,6 +175,24 @@
 
     }
 
+    function uName(){
+        var uni = Math.random()*100000000000000000 + "";
+        return uni;
+    }
+
+    function poulate(target){
+        //target is 'preview' DOM
+        var project = target.childNodes[3];
+        var title = target.id;
+        var returnDiv = project.childNodes[3];
+
+        var iFrame = document.createElement('iframe');
+        iFrame.src = title + "/project.html";
+        project.insertBefore(iFrame,returnDiv);
+
+
+    }
+
     function showBlocks(){
         var proj = document.getElementsByClassName('open')[0];
         var blocks = document.getElementsByClassName('block');
@@ -197,7 +215,7 @@
     }
 
     function clickEvent(e){
-        console.log("We Clicked :" + e.target.tagName);
+        console.log("We Clicked :" + e.target.tagName + uName());
         deb.innerHTML = version + "Clicked !";
         var eTar = e.target;
         
@@ -215,6 +233,7 @@
                 console.log("removing BLOCK adding PREVIEW");
                 eTar.classList.add('preview');
                 eTar.classList.remove('block');
+                poulate(eTar);
             } else if (proClass == "item preview"){
                 console.log("Removing PREVIEW adding OPEN");
                 eTar.classList.remove('preview');
