@@ -13,6 +13,8 @@
     var outerBody = document.body;
     var outerHTML = document.documentElement;
     var goTop;
+    var iFrame;
+
     //var preDef = false;
     
     window.onload = function(){
@@ -155,6 +157,7 @@
         if (suspect !== undefined){
             suspect.classList.add('block');
             suspect.classList.remove('preview');
+            depopulate();
         } 
     }
 
@@ -182,15 +185,23 @@
 
     function poulate(target){
         //target is 'preview' DOM
+
         var project = target.childNodes[3];
         var title = target.id;
         var returnDiv = project.childNodes[3];
 
-        var iFrame = document.createElement('iframe');
+        iFrame = document.createElement('iframe');
         iFrame.src = title + "/project.html";
         project.insertBefore(iFrame,returnDiv);
+        console.log("Populate " +title +" Project!");
 
+    }
 
+    function depopulate(target){
+        console.log("Depopulating");
+        iFrame.remove();
+        //document.getElementsByClassName('preview')[0].childNodes[3].removeChild[3];
+        //document.getElementsByClassName('open')[0].childNodes[3].removeChild[3];
     }
 
     function showBlocks(){
@@ -206,7 +217,7 @@
         for(var i=0, max=blocks.length; i<max; i++){
             blocks[i].classList.remove('hidden');
         }
-
+        depopulate();
         proj.classList.add('block');
         proj.classList.remove('open');
 
@@ -233,7 +244,11 @@
                 console.log("removing BLOCK adding PREVIEW");
                 eTar.classList.add('preview');
                 eTar.classList.remove('block');
-                poulate(eTar);
+
+                setTimeout(function(){
+                    poulate(eTar);
+                },700);
+
             } else if (proClass == "item preview"){
                 console.log("Removing PREVIEW adding OPEN");
                 eTar.classList.remove('preview');
