@@ -6,7 +6,7 @@
     var lastIndex = document.getElementById('wheel').childElementCount;
     var first;
     var last;
-    var version = " V0.57 ";
+    var version = " V0.58 ";
     var deb = document.getElementById('debuger');
     var clientX, clientY;
     var scrollBack;
@@ -200,8 +200,6 @@
     function depopulate(target){
         console.log("Depopulating");
         iFrame.remove();
-        //document.getElementsByClassName('preview')[0].childNodes[3].removeChild[3];
-        //document.getElementsByClassName('open')[0].childNodes[3].removeChild[3];
     }
 
     function showBlocks(){
