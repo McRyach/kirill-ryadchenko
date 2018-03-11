@@ -11,23 +11,38 @@
     <div class="project">
         <h3>VOIDING</h3>
         <iframe src="https://player.vimeo.com/video/259280257?loop=1&color=7606f6f&title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        <p>paragraph</p>
+        <p>Two initial behaviors recognize the corner conditions of flat side 
+            of the cube and build a tool path melting away the wax cube. 
+            As the cube gets more melted it is becoming harder to definitely 
+            distinguish a corner and a flat.</p>
         <img src="cube.jpg" alt="Initial Stage">
-        <p>Paragraph</p>
-        <img src="melt.jpg" alt="Initial Stage">
-        <p>Paragraph</p>
-        <img src="points.png" alt="Initial Stage">
-        <p>Paragraph</p>
-        <img src="points1.png" alt="Initial Stage">
-        <p>Paragraph</p>
-        <img src="MeshRender.png" alt="Initial Stage">
-        <p>Paragraph</p>
-        <img src="screen1.png" alt="Initial Stage">
-        <p>Paragraph</p>
-        <img src="screen2.png" alt="Initial Stage">
-        <p>Paragraph</p>
-        <img src="Thomas.jpg" alt="Initial Stage">
-        <p>Paragraph</p>
+        <p>Initial material condition: wax cube 12"x12"18"</p>
+        <img src="melt.jpg" alt="Robot Arm Heat Gun Wax Melting">
+        <p>The spiral tool path getting revealed on the flat surface of the cube. </p>
+        <img src="points.png" alt="Kinect Point Cloud Capture">
+        <p>Raw point cloud of flat cube surface from Kinect sensor.</p>
+        <img src="points1.png" alt="Kinect Point Cloud Capture">
+        <p>Raw point cloud of cube's corner from Kinect sensor. Infrared sensor 
+            have trouble reading hot translucent areas of the wax cube.</p>
+        <img src="MeshRender.png" alt="Wet Mesh Build on Raw Point Cloud">
+        <p>To build a tool path code in processing builds a mesh on raw point 
+            cloud using wat-mesh algorythm.</p>
+        <img src="screen1.png" alt="Robot Arm Tool Path User Interface">
+        <p>User Interface in the Processing shows that the robot is facing a 
+            corner of the cube and builds a tool path indicated as a red line. </p>
+        <img src="screen2.png" alt="Robot Arm Tool Path User Interface">
+        <p>User interface in the Processing shows that the robot is facing a flat 
+            side of the cube and builds a spiral tool path. </p>
+        <img src="Thomas.jpg" alt="Robot Lab Setup">
+        <p>The physical setup includes a wax cube on the turn table which is 
+            controlled by Arduino from Processing. Across from the cube is Staubli 
+            RX-60 robot arm with the heat gun fixed at the tool tip. Robot arm is 
+            getting VAL-3 coordinates from Processing via serial port. Below robot 
+            arm Kinect sensor which scans the wax cube in 3D and sends the point 
+            cloud to the Processing. The Laptop which runs the processing is not 
+            shown.  
+            <br><br>
+            The research group: Thomas Legleu, Kirill Ryadchenko, Chuck Diep, <a href="https://www.yuan-mu-design.com/">Yuan Mu</a>, <a href="http://www.diegowulaw.com/">Diego Wu-Law</a></p>
     </div>
 </body>
 </html>

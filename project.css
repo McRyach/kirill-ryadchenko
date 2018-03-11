@@ -54,6 +54,11 @@ html, body {
     -webkit-text-size-adjust: 100%; /* 2 */
 }
 
+a, a:link, a:hover, a:active {
+  color: aqua;
+  text-decoration: none;
+}
+
 p{
   margin: 4vw 9vw 9vw;
   color: white;
