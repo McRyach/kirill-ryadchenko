@@ -377,6 +377,11 @@ html, body {
     font-size: 12px;
 }
 
+a:link {
+  color: aqua;
+  text-decoration: none;
+}
+
 p{
   margin: 9vw 9vw 2vw;
   color: white;
