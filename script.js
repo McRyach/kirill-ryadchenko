@@ -67,10 +67,10 @@
             console.log("DeltaY: " + deltaY);
 
             if(Math.abs(deltaY) < 20){
-                deb.innerHTML = version + "It's a ckick! ";
+                //deb.innerHTML = version + "It's a ckick! ";
                 clickEvent(e);
             } else {
-                deb.innerHTML = version + "It's a scroll!!!!";
+                //deb.innerHTML = version + "It's a scroll!!!!";
             }
 
         }, false);
@@ -86,7 +86,7 @@
     function scrollingEvent(e) {
 
         viewpixel = window.scrollY;
-        deb.innerHTML = version +"Pixel: "+ viewpixel;
+        //deb.innerHTML = version +"Pixel: "+ viewpixel;
         first = document.getElementsByClassName('item')[0];
         last = document.getElementsByClassName('item')[23];
 
@@ -225,7 +225,7 @@
 
     function clickEvent(e){
         console.log("We Clicked :" + e.target.tagName + uName());
-        deb.innerHTML = version + "Clicked !";
+        //deb.innerHTML = version + "Clicked !";
         var eTar = e.target;
         
         if(eTar.tagName == 'HTML'){
@@ -277,7 +277,7 @@
         }
 
        console.log("/////////////////////////////////////////////////////////////////");
-        deb.innerHTML = version + "Clicked: "+ eTar.id;
+        deb.innerHTML =  eTar.id;
         e.stopPropagation();
 
     }
