@@ -227,7 +227,11 @@
         depopulate();
         proj.classList.add('block');
         proj.classList.remove('open');
-
+        //proj.scrollIntoView();
+        setTimeout(function(){
+            proj.scrollIntoView();
+            console.log("Shoot!");
+        },200);
        // window.addEventListener("scroll", scrollingEvent, {passive: true});
 
     }
