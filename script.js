@@ -231,7 +231,7 @@
         setTimeout(function(){
             proj.scrollIntoView();
             console.log("Shoot!");
-        },500);
+        },200);
        // window.addEventListener("scroll", scrollingEvent, {passive: true});
 
     }
