@@ -17,10 +17,10 @@
 
     //var preDef = false;
     
-    window.onload = function(){
+    /* window.onload = function(){
         multiplier();
         window.scrollTo(0,7900);
-    }
+    } */
 
 
 
@@ -83,7 +83,7 @@
 
     window.addEventListener("scroll", scrollingEvent, {passive: true});
 
-    function scrollingEvent(e) {
+    /* function scrollingEvent(e) {
 
         viewpixel = window.scrollY;
         //deb.innerHTML = version +"Pixel: "+ viewpixel;
@@ -117,21 +117,28 @@
             }
 
         }, scrollBack);
-    }
+    } */
 
     function wheelNode(event){
         
             var clickedItem = event.target;
             var itemClass = clickedItem.className;
             console.log("Getting The Wheel Item!" + itemClass);
-            if(itemClass == "item block" || itemClass == "item preview"){
+            if(itemClass == "item block" 
+            || itemClass == "item preview" 
+            || itemClass == "debug"
+            || itemClass == "debug return"){
                 console.log("First Try Result");
                 return clickedItem;
                 event.stopPropagation;
             } else {
                 clickedItem = clickedItem.parentNode;
 
-                if(clickedItem.className == "item block" || clickedItem.className == "item preview" || clickedItem.className == "return"){
+                if(clickedItem.className == "item block" 
+                || clickedItem.className == "item preview" 
+                || clickedItem.className == "return"
+                || clickedItem.className == "debug"
+                || clickedItem.className == "debug return"){
                     console.log("Second Try Result!");
                     return clickedItem;
                     event.stopPropagation;
@@ -161,22 +168,7 @@
         } 
     }
 
-    function hideBlocks(){
-        var blocks = document.getElementsByClassName('block');
-        var proj = document.getElementsByClassName('open')[0];
-        
-        proj.childNodes[1].classList.add('hidden');
-        proj.childNodes[5].classList.add('hidden');
 
-        for(var i=0, max=blocks.length; i<max; i++){
-            blocks[i].classList.add('hidden');
-        }
-        outerBody.classList.add('backBody');
-        outerHTML.classList.add('backBody');
-
-        window.removeEventListener("scroll", scrollingEvent, {passive: true});
-
-    }
 
     function uName(){
         var uni = Math.random()*100000000000000000 + "";
@@ -202,6 +194,23 @@
         iFrame.remove();
     }
 
+    function hideBlocks(){
+        var blocks = document.getElementsByClassName('block');
+        var proj = document.getElementsByClassName('open')[0];
+        
+        proj.childNodes[1].classList.add('hidden');
+        proj.childNodes[5].classList.add('hidden');
+
+        for(var i=0, max=blocks.length; i<max; i++){
+            blocks[i].classList.add('hidden');
+        }
+        outerBody.classList.add('backBody');
+        outerHTML.classList.add('backBody');
+
+        //window.removeEventListener("scroll", scrollingEvent, {passive: true});
+
+    }
+
     function showBlocks(){
         var proj = document.getElementsByClassName('open')[0];
         var blocks = document.getElementsByClassName('block');
@@ -219,7 +228,7 @@
         proj.classList.add('block');
         proj.classList.remove('open');
 
-        window.addEventListener("scroll", scrollingEvent, {passive: true});
+       // window.addEventListener("scroll", scrollingEvent, {passive: true});
 
     }
 
@@ -230,6 +239,7 @@
         
         if(eTar.tagName == 'HTML'){
             console.log('It is a white space'); 
+            deb.innerHTML = 'KIRILL RYADCHENKO';
             suspect();
         } else {
             console.log("We Hit :" + eTar.id);
@@ -242,6 +252,7 @@
                 console.log("removing BLOCK adding PREVIEW");
                 eTar.classList.add('preview');
                 eTar.classList.remove('block');
+                deb.innerHTML = eTar.id ;
 
                 setTimeout(function(){
                     poulate(eTar);
@@ -251,6 +262,8 @@
                 console.log("Removing PREVIEW adding OPEN");
                 eTar.classList.remove('preview');
                 eTar.classList.add('open');
+                deb.innerHTML =  eTar.id;
+                deb.classList.add('return');
                 var fixedUnderlay = eTar.childNodes[3];
 
                 //fixedUnderlay.addEventListener('touchmove', function(e){
@@ -267,9 +280,12 @@
                     }, 400);
                 }
 
-            } else if (proClass == "return") {
+            } else if (proClass == "debug return") {
                 console.log("Return of The Jedi!");
                 showBlocks();
+            } else if (proClass == "debug"){
+                console.log("We Hit Comfy Menu!");
+                //deb.innerHTML = 'KIRILL RYADCHENKO';
             }
             //eTar.scrollIntoView(true);
             
@@ -277,7 +293,7 @@
         }
 
        console.log("/////////////////////////////////////////////////////////////////");
-        deb.innerHTML =  eTar.id;
+        //deb.innerHTML =  eTar.id;
         e.stopPropagation();
 
     }
