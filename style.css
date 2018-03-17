@@ -572,7 +572,7 @@ h3{
 @media screen and (max-width: 1100px){ 
   /* iPhone and smaller */
   .item{
-    color: aqua;
+    /*color: aqua;*/
     background-attachment: local;
   }
 
