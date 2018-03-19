@@ -504,7 +504,7 @@ h3{
 }
 
 .debug{
-    height: 5vh;
+    height: 50px;
     width: 100vw;
     color:grey;
     background-color: black;
@@ -538,35 +538,35 @@ h3{
 
 
 #FLOMASTER{
-    background-image: url('FLOMASTER/cover.jpg');
+    background-image: url('FLOMASTER/CoverLG.jpg');
 }
 
 #DESIGENCE{
-    background-image: url('DESIGENCE/cover.jpg');
+    background-image: url('DESIGENCE/CoverLight.jpg');
 }
 
 #DISCIPLINARY_ENTROPY{
-    background-image: url('DISCIPLINARY_ENTROPY/cover2.jpg');
+    background-image: url('DISCIPLINARY_ENTROPY/CoverLG.jpg');
 }
 
 #OBLIQUE_FIGURATION{
-    background-image: url('OBLIQUE_FIGURATION/cover.jpg');
+    background-image: url('OBLIQUE_FIGURATION/CoverLG.jpg');
 }
 
 #REFLAXING{
-    background-image: url('REFLAXING/cover.jpg');
+    background-image: url('REFLAXING/CoverLG.jpg');
 }
 
 #VOIDING{
-    background-image: url('VOIDING/cover.jpg');
+    background-image: url('VOIDING/CoverLG.jpg');
 }
 
 #DYNAMIC_MATERIAL_CULTURE{
-    background-image: url('DYNAMIC_MATERIAL_CULTURE/cover.jpg');
+    background-image: url('DYNAMIC_MATERIAL_CULTURE/CoverLG.jpg');
 }
 
 #MESH_FARM{
-    background-image: url('MESH_FARM/cover.jpg');
+    background-image: url('MESH_FARM/CoverLG.jpg');
 }
 
 @media screen and (max-width: 1100px){ 
