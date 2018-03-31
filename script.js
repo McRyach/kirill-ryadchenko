@@ -81,7 +81,7 @@
     }
     
 
-    window.addEventListener("scroll", scrollingEvent, {passive: true});
+    //window.addEventListener("scroll", scrollingEvent, {passive: true});
 
     /* function scrollingEvent(e) {
 
@@ -256,6 +256,13 @@
 
     }
 
+    function cleanString(stringToClean){
+        var clean = stringToClean.replace('_', ' ');
+        clean = clean.replace('_', ' ');
+        console.log("Clean String " + clean);
+        return clean;
+    }
+
     function nextProject(){
         var closing;
         var opening;
@@ -283,6 +290,8 @@
         closing.classList.add('hidden');
 
         hideBlocks();
+
+        deb.innerHTML =  cleanString(opening.id);
     }
 
 
@@ -320,7 +329,7 @@
                 setTimeout(function(){
                     addNavigation();
                 }, 1000);
-                deb.innerHTML =  eTar.id;
+                deb.innerHTML =  cleanString(eTar.id);
                 var fixedUnderlay = eTar.childNodes[3];
 
                 //fixedUnderlay.addEventListener('touchmove', function(e){
