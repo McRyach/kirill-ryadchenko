@@ -126,8 +126,8 @@
             console.log("Getting The Wheel Item!" + itemClass);
             if(itemClass == "item block" 
             || itemClass == "item preview" 
-            || itemClass == "debug"
-            || itemClass == "debug return"){
+            || itemClass == "goBack show"
+            || itemClass == "goForth show"){
                 console.log("First Try Result");
                 return clickedItem;
                 event.stopPropagation;
@@ -211,6 +211,26 @@
 
     }
 
+    function addNavigation(){
+        var back = document.getElementsByClassName('goBack')[0];
+        var forth = document.getElementsByClassName('goForth')[0];
+        var panel = document.getElementsByClassName('panel')[0];
+
+        back.classList.add('show');
+        forth.classList.add('show');
+        panel.classList.add('panelNavigation');
+    }
+
+    function removeNavigation(){
+        var back = document.getElementsByClassName('goBack show')[0];
+        var forth = document.getElementsByClassName('goForth show')[0];
+        var panel = document.getElementsByClassName('panel')[0];
+
+        back.classList.remove('show');
+        forth.classList.remove('show');
+        panel.classList.remove('panelNavigation');
+    }
+
     function showBlocks(){
         var proj = document.getElementsByClassName('open')[0];
         var blocks = document.getElementsByClassName('block');
@@ -236,6 +256,36 @@
 
     }
 
+    function nextProject(){
+        var closing;
+        var opening;
+        var items = document.getElementsByClassName('item');
+        for(var i=0, max=items.length; i<max; i++){
+            var check = items[i].className;
+            if(check == 'item open'){
+                var nextIndex = i+1;
+                console.log("Initial Index " + items.length);
+                if(i == items.length-2){
+                    nextIndex = 1;
+                }
+                console.log("we Found it! it is " + nextIndex);
+                closing = items[i];
+                opening = items[nextIndex];
+            }
+        }
+        poulate(opening);
+        opening.classList.remove('block');
+        opening.classList.remove('hidden');
+        opening.classList.add('open');
+    
+        closing.classList.remove('open');
+        closing.classList.add('block');
+        closing.classList.add('hidden');
+
+        hideBlocks();
+    }
+
+
     function clickEvent(e){
         console.log("We Clicked :" + e.target.tagName + uName());
         //deb.innerHTML = version + "Clicked !";
@@ -256,7 +306,8 @@
                 console.log("removing BLOCK adding PREVIEW");
                 eTar.classList.add('preview');
                 eTar.classList.remove('block');
-                deb.innerHTML = eTar.id ;
+                eTar.scrollIntoView({block: 'start', behavior: 'smooth'});
+                //deb.innerHTML = eTar.id ;
 
                 setTimeout(function(){
                     poulate(eTar);
@@ -266,8 +317,10 @@
                 console.log("Removing PREVIEW adding OPEN");
                 eTar.classList.remove('preview');
                 eTar.classList.add('open');
+                setTimeout(function(){
+                    addNavigation();
+                }, 1000);
                 deb.innerHTML =  eTar.id;
-                deb.classList.add('return');
                 var fixedUnderlay = eTar.childNodes[3];
 
                 //fixedUnderlay.addEventListener('touchmove', function(e){
@@ -284,12 +337,13 @@
                     }, 400);
                 }
 
-            } else if (proClass == "debug return") {
-                console.log("Return of The Jedi!");
+            } else if (proClass == "goForth show") {
+                console.log("Advance!");
+                nextProject();
+            } else if (proClass == "goBack show"){
+                console.log("<<<Retreat!");
                 showBlocks();
-            } else if (proClass == "debug"){
-                console.log("We Hit Comfy Menu!");
-                //deb.innerHTML = 'KIRILL RYADCHENKO';
+                removeNavigation();
             }
             //eTar.scrollIntoView(true);
             
