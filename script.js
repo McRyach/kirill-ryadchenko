@@ -283,7 +283,7 @@
         poulate(opening);
         closing.childNodes[1].classList.remove('hidden');
         closing.childNodes[5].classList.remove('hidden');
-        
+
         opening.classList.add('open');
         opening.classList.remove('block');
         opening.classList.remove('hidden');
@@ -318,8 +318,7 @@
                 console.log("removing BLOCK adding PREVIEW");
                 eTar.classList.add('preview');
                 eTar.classList.remove('block');
-                eTar.scrollIntoView({block: 'start', behavior: 'smooth'});
-                //deb.innerHTML = eTar.id ;
+                //eTar.scrollIntoView({block: 'start', behavior: 'smooth'});
 
                 setTimeout(function(){
                     poulate(eTar);
@@ -334,13 +333,8 @@
                 }, 1000);
                 deb.innerHTML =  cleanString(eTar.id);
                 var fixedUnderlay = eTar.childNodes[3];
-
-                //fixedUnderlay.addEventListener('touchmove', function(e){
-                //    e.preventDefault();
-                //}, false);
                 
                 hideBlocks();
-                //preDef = true;
                 
                 eTar.scrollIntoView({behavior: "instant"});
                 if(true){
@@ -350,15 +344,11 @@
                 }
 
             } else if (proClass == "goForth show") {
-                console.log("Advance!");
                 nextProject();
             } else if (proClass == "goBack show"){
-                console.log("<<<Retreat!");
                 showBlocks();
                 removeNavigation();
             }
-            //eTar.scrollIntoView(true);
-            
 
         }
 
