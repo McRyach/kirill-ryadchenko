@@ -281,13 +281,16 @@
             }
         }
         poulate(opening);
+        closing.childNodes[1].classList.remove('hidden');
+        closing.childNodes[5].classList.remove('hidden');
+        
+        opening.classList.add('open');
         opening.classList.remove('block');
         opening.classList.remove('hidden');
-        opening.classList.add('open');
     
-        closing.classList.remove('open');
         closing.classList.add('block');
         closing.classList.add('hidden');
+        closing.classList.remove('open');
 
         hideBlocks();
 
