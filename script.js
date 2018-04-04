@@ -138,7 +138,8 @@
                 || clickedItem.className == "item preview" 
                 || clickedItem.className == "return"
                 || clickedItem.className == "debug"
-                || clickedItem.className == "debug return"){
+                || clickedItem.className == "debug return"
+                || clickedItem.className == "videoContainer"){
                     console.log("Second Try Result!");
                     return clickedItem;
                     event.stopPropagation;
@@ -303,7 +304,7 @@
         //deb.innerHTML = version + "Clicked !";
         var eTar = e.target;
         
-        if(eTar.tagName == 'HTML'){
+        if(eTar.tagName == 'IMG' || eTar.tagName == 'VIDEO'){
             console.log('It is a white space'); 
             deb.innerHTML = 'KIRILL RYADCHENKO';
             suspect();
