@@ -613,6 +613,10 @@ h3{
     background-image: url('MESH_FARM/CoverLG.jpg');
 }
 
+#HOLOCON{
+  background-image: url('HOLOCON/cover.jpg');
+}
+
 #myVideo {
   position: fixed;
   top: 50%;
